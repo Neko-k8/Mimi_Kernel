@@ -1,0 +1,1156 @@
+ese/Kconfig:	bool "Nubia ese driver"
+ese/Kconfig:config NUBIA_ESE
+ese/Kconfig:	  NUBIA ESE Driver.
+ese/Kconfig:	  Say Y here to compile support for NUBIA ese driver into the
+ese/Makefile:# Makefile for the nubia ese driver.
+ese/Makefile:obj-$(CONFIG_NUBIA_ESE) += nubia_ese.o
+ese/nubia_ese.c:		.compatible = "nubia,ese-spi",
+ese/nubia_ese.c: * Copyright (C) 2020 Niuxiaojun <xiaojun.niu@nubia.com>
+ese/nubia_ese.c:#define SPI_DRIVER_NAME "nubia,ese-spi"
+ese/nubia_ese.c:	.id_table = nubia_ese_id_table,
+ese/nubia_ese.c:late_initcall(nubia_ese_init);
+ese/nubia_ese.c:MODULE_AUTHOR("Nubia, Inc.");
+ese/nubia_ese.c:MODULE_DESCRIPTION("Nubia ese SPI Bus Support Module");
+ese/nubia_ese.c:MODULE_DEVICE_TABLE(of, nubia_ese_of_match_table);
+ese/nubia_ese.c:MODULE_DEVICE_TABLE(spi, nubia_ese_id_table);
+ese/nubia_ese.c:module_exit(nubia_ese_exit);
+ese/nubia_ese.c: * Nubia ese driver support for Sansung&Thalse ese device.
+ese/nubia_ese.c:		.of_match_table = nubia_ese_of_match_table,
+ese/nubia_ese.c:	.probe = nubia_ese_spi_probe,
+ese/nubia_ese.c:	.remove = nubia_ese_spi_remove,
+ese/nubia_ese.c:	return spi_register_driver(&nubia_ese_spi_driver);
+ese/nubia_ese.c:	return spi_unregister_driver(&nubia_ese_spi_driver);
+ese/nubia_ese.c:static const struct spi_device_id nubia_ese_id_table[] = {
+ese/nubia_ese.c:static int __init nubia_ese_init(void)
+ese/nubia_ese.c:static int nubia_ese_spi_probe(struct spi_device *spi)
+ese/nubia_ese.c:static int nubia_ese_spi_remove(struct spi_device *spi)
+ese/nubia_ese.c:static struct of_device_id nubia_ese_of_match_table[] = {
+ese/nubia_ese.c:static struct spi_driver nubia_ese_spi_driver = {
+ese/nubia_ese.c:static void __exit  nubia_ese_exit(void)
+ese/nubia_ese.h:#define _NUBIA_ESE_H_
+ese/nubia_ese.h:#ifndef _NUBIA_ESE_H_
+fan/fan_core.c:		adc_current = get_fan_current(nubia_fan);
+fan/fan_core.c:		adc_temp = get_fan_temp(nubia_fan);
+fan/fan_core.c:        { .compatible = "nubia_fan_i2c" },
+fan/fan_core.c:		fan_count = get_speed_count(nubia_fan);
+fan/fan_core.c:	fan_enable_reg(nubia_fan, enable);
+fan/fan_core.c:	//fan_enable_reg(nubia_fan, false);
+fan/fan_core.c:	    fan_hw_reset(nubia_fan,1200);
+fan/fan_core.c:			fan_hw_reset(nubia_fan,delay_table[i]);
+fan/fan_core.c:	  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:	fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:	fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:	fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:    fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:    fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:   fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:  fan_i2c_write(nubia_fan,&val,1);
+fan/fan_core.c:	get_fan_temp(nubia_fan);
+fan/fan_core.c:		get_speed_count(nubia_fan);
+fan/fan_core.c:#include "nubia_fan.h"
+fan/fan_core.c:		.name = "nubia_fan",
+fan/fan_core.c:    nubia_fan = fan;
+fan/fan_core.c:	{ "nubia_fan_i2c", 0 },
+fan/fan_core.c:	//printk(KERN_ERR "George %s<-->%d,addr:%02x\n",__FUNCTION__,__LINE__,nubia_fan ->i2c ->addr);
+fan/fan_core.c:	ret= fan_i2c_read(nubia_fan,&firmware_version_reg,sizeof(firmware_version_reg));
+fan/fan_core.c:   	    start_pwm(nubia_fan,0);
+fan/fan_core.c:					//start_pwm(nubia_fan,60);
+fan/fan_core.c:	start_pwm(nubia_fan, fan_pwm_val);
+fan/fan_core.c:					start_pwm(nubia_fan,fan_rpm[FAN_LEVEL_1][FAN_PWM]);
+fan/fan_core.c:					start_pwm(nubia_fan,fan_rpm[FAN_LEVEL_2][FAN_PWM]);
+fan/fan_core.c:					start_pwm(nubia_fan,fan_rpm[FAN_LEVEL_3][FAN_PWM]);
+fan/fan_core.c:					start_pwm(nubia_fan,fan_rpm[FAN_LEVEL_4][FAN_PWM]);
+fan/fan_core.c:					start_pwm(nubia_fan,fan_rpm[FAN_LEVEL_5][FAN_PWM]);
+fan/fan_core.c:	start_pwm(nubia_fan, offset);
+fan/fan_core.c:static struct fan *nubia_fan;
+fan/fan_core.c:static struct fan *nubia_fan;
+fan/fan_core.c:	status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:	status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:	status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:    status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:  status=fan_i2c_firmware_read(nubia_fan,&firmware_magicvalue,1);
+fan/fan_core.c:    //status=i2c_smbus_read_byte_data(nubia_fan ->i2c,MAGIC_VALUE);
+fan/fan_core.c:		struct i2c_client *i2c = nubia_fan->i2c;
+fan/fan_core.c:	struct i2c_client *i2c = nubia_fan->i2c;
+fan/Kconfig:if NUBIA_FAN
+fan/Kconfig:menuconfig NUBIA_FAN
+fan/nubia_fan.h:#define _NUBIA_FAN_H_
+fan/nubia_fan.h:#endif //_NUBIA_FAN_H_
+fan/nubia_fan.h:#ifndef _NUBIA_FAN_H_
+input/Kconfig:	bool "Nubia reset key"
+input/Kconfig:config NUBIA_INPUT_KEYRESET
+input/keyboard/cy8c4014l_touchkey/cy8c4014l_touchkey.c: * Copyright (C) 2018 nubia
+input/keyboard/cy8c4014l_touchkey/cy8c4014l_touchkey.c:MODULE_AUTHOR("nubia, Inc.");
+input/keyboard/cy8c4014l_touchkey/cy8c4014l_touchkey_firmware_update.c: * Copyright (C) 2018 nubia
+input/keyboard/cy8c4014l_touchkey/cy8c4014l_touchkey_StringImage.h:#ifdef TARGET_NUBIA_NX629J_V1S
+input/keyboard/cy8c4014l_touchkey/cy8c4014l_touchkey_StringImage.h:#include "Nubia_NX669_4024FNI-S412_20.cyacd"
+input/keyboard/cy8c4014l_touchkey/Kconfig:config NUBIA_CYPRESS_KEYBOARD_GAMEFIRE
+input/keyboard/cy8c4014l_touchkey/Kconfig:        tristate "Keypad NUBIA GameFire"
+input/keyboard/cy8c4014l_touchkey_left/cy8c4014l_touchkey.c: * Copyright (C) 2018 nubia
+input/keyboard/cy8c4014l_touchkey_left/cy8c4014l_touchkey.c:MODULE_AUTHOR("nubia, Inc.");
+input/keyboard/cy8c4014l_touchkey_left/cy8c4014l_touchkey_firmware_update.c: * Copyright (C) 2018 nubia
+input/keyboard/cy8c4014l_touchkey_left/cy8c4014l_touchkey_StringImage.h:#ifdef TARGET_NUBIA_NX629J_V1S
+input/keyboard/cy8c4014l_touchkey_left/cy8c4014l_touchkey_StringImage.h:#include "Nubia_NX669_4024FNI-S412_21.cyacd"
+input/keyboard/cy8c4014l_touchkey_left/Kconfig:config NUBIA_CYPRESS_KEYBOARD_LEFT_GAMEFIRE
+input/keyboard/cy8c4014l_touchkey_left/Kconfig:        tristate "Keypad NUBIA GameFire"
+input/keyboard/cy8c4014l_touchkey_left/Makefile:    ccflags-y += -DTARGET_NUBIA_NX629J_V1S
+input/keyboard/cy8c4014l_touchkey_left/Makefile:ifeq ($(TARGET_NUBIA_NX629J_V1S), true)
+input/keyboard/cy8c4014l_touchkey_left/Makefile:#nubia: nubia 629 v1s
+input/keyboard/cy8c4014l_touchkey_left/Makefile:obj-$(CONFIG_NUBIA_CYPRESS_KEYBOARD_LEFT_GAMEFIRE)           += cy8c4014l_touchkey_firmware_update.o
+input/keyboard/cy8c4014l_touchkey_left/Makefile:obj-$(CONFIG_NUBIA_CYPRESS_KEYBOARD_LEFT_GAMEFIRE)           += cy8c4014l_touchkey.o
+input/keyboard/cy8c4014l_touchkey_left/Makefile:obj-$(CONFIG_NUBIA_CYPRESS_KEYBOARD_LEFT_GAMEFIRE)           += cybtldr_touchkey_command.o
+input/keyboard/cy8c4014l_touchkey/Makefile:    ccflags-y += -DTARGET_NUBIA_NX629J_V1S
+input/keyboard/cy8c4014l_touchkey/Makefile:ifeq ($(TARGET_NUBIA_NX629J_V1S), true)
+input/keyboard/cy8c4014l_touchkey/Makefile:#nubia: nubia 629 v1s
+input/keyboard/cy8c4014l_touchkey/Makefile:obj-$(CONFIG_NUBIA_CYPRESS_KEYBOARD_GAMEFIRE)           += cy8c4014l_touchkey_firmware_update.o
+input/keyboard/cy8c4014l_touchkey/Makefile:obj-$(CONFIG_NUBIA_CYPRESS_KEYBOARD_GAMEFIRE)           += cy8c4014l_touchkey.o
+input/keyboard/cy8c4014l_touchkey/Makefile:obj-$(CONFIG_NUBIA_CYPRESS_KEYBOARD_GAMEFIRE)           += cybtldr_touchkey_command.o
+input/keyboard/gpio_keys.c:#ifdef CONFIG_NUBIA_KEYBOARD_GAMESWITCH
+input/keyboard/gpio_keys.c:#ifdef CONFIG_NUBIA_KEYBOARD_GAMESWITCH
+input/keyboard/gpio_keys.c:#ifdef CONFIG_NUBIA_KEYBOARD_GAMESWITCH
+input/keyboard/Kconfig:config NUBIA_KEYBOARD_GAMESWITCH
+input/keyboard/Kconfig:        tristate "Keypad NUBIA GameSwitchkey"
+input/keyboard/Makefile:obj-$(CONFIG_NUBIA_CYPRESS_KEYBOARD_GAMEFIRE) += cy8c4014l_touchkey/
+input/keyboard/Makefile:obj-$(CONFIG_NUBIA_CYPRESS_KEYBOARD_GAMEFIRE) += cy8c4014l_touchkey_left/
+input/keyreset_nubia.c:	{ .compatible = "nubia,keyreset" },
+input/keyreset_nubia.c:	pr_info("nubia: using input dev %s for key reset\n", dev->name);
+input/keyreset_nubia.c:	state->wq = alloc_ordered_workqueue("keyreset_nubia", 0);
+input/Makefile:obj-$(CONFIG_NUBIA_INPUT_KEYRESET)     += keyreset_nubia.o
+Kconfig:source "drivers/nubia_hw_version/Kconfig"
+Kconfig:source "drivers/nubia/Kconfig"
+leds/Kconfig:#NUBIA LED END
+leds/Kconfig:#NUBIA LED START
+leds/Kconfig:source "drivers/leds/nubia_led/Kconfig"
+leds/Kconfig:          This macro just for nubia led feature
+leds/leds-qti-tri-led.c:		rc = nubia_light_breath_set(led_cdev, breath_param);
+leds/leds-qti-tri-led.c:static int nubia_light_breath_set(struct led_classdev *led_cdev,
+leds/Makefile:#nubia led end
+leds/Makefile:#nubia led start
+leds/Makefile:obj-$(CONFIG_NUBIA_LED)			+= nubia_led/
+leds/nubia_led/aw22xxx/Kconfig:	bool "nubia led aw22xxx driver cts"
+leds/nubia_led/aw22xxx/Kconfig:config NUBIA_LED_AW22XXX
+leds/nubia_led/aw22xxx/Kconfig:config NUBIA_LED_AW22XXX_CTS
+leds/nubia_led/aw22xxx/Kconfig:# nubia led aw9106 driver configuration
+leds/nubia_led/aw22xxx/Kconfig:	  Say Y here if you have a nubia led aw22xxx connected
+leds/nubia_led/aw22xxx/Kconfig:	  Say Y here if you have a nubia led aw22xxx cts
+leds/nubia_led/aw22xxx/Kconfig:	tristate "nubia led aw22xxx driver"
+leds/nubia_led/aw22xxx/leds-aw22xxx.c://add by nubia zhouruituan end
+leds/nubia_led/aw22xxx/leds-aw22xxx.c://add by nubia zhouruituan start
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:    AW22_LOG("nubia_ver_gpio:%d, gpio_value:%d, fw name :%s", aw22xxx->nubia_ver_gpio, gpio_value, aw22xxx_fw_name);
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:    aw22xxx_load_nubia_fw_name(aw22xxx);
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:    aw22xxx->nubia_ver_gpio = of_get_named_gpio(np, "nubia_ver-gpio", 0);
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:        dev_info(dev, "%s: not suppport nubia_ver_gpio, regard as normal version\n", __func__);
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:        dev_info(dev, "%s: nubia_ver_gpio provided ok, aw22xxx->nubia_ver_gpio=%d\n", __func__, aw22xxx->nubia_ver_gpio);
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:        gpio_value = gpio_get_value(aw22xxx->nubia_ver_gpio);
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:#ifdef NUBIA_MULTICOLOR_LED
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:#ifdef NUBIA_MULTICOLOR_LED
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:#ifdef NUBIA_MULTICOLOR_LED
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:#ifdef NUBIA_MULTICOLOR_LED
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:    if (!gpio_is_valid(aw22xxx->nubia_ver_gpio)) {
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:    if (gpio_is_valid(aw22xxx->nubia_ver_gpio)) {
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:#ifndef CONFIG_NUBIA_LED_AW22XXX_CTS
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:#ifndef CONFIG_NUBIA_LED_AW22XXX_CTS
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:#ifndef CONFIG_NUBIA_LED_AW22XXX_CTS
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:      pr_info("%s: nubia set %s imax_level=%d.\n", __func__, aw22xxx_cfg_name[aw22xxx->effect], imax_id);
+leds/nubia_led/aw22xxx/leds-aw22xxx.c:static int aw22xxx_load_nubia_fw_name(struct aw22xxx *aw22xxx)
+leds/nubia_led/aw22xxx/leds-aw22xxx.h:#define NUBIA_MULTICOLOR_LED
+leds/nubia_led/aw22xxx/leds-aw22xxx.h:#ifdef NUBIA_MULTICOLOR_LED
+leds/nubia_led/aw22xxx/leds-aw22xxx.h:#ifdef NUBIA_MULTICOLOR_LED
+leds/nubia_led/aw22xxx/leds-aw22xxx.h:    int nubia_ver_gpio;
+leds/nubia_led/aw22xxx/Makefile:obj-$(CONFIG_NUBIA_LED_AW22XXX) += leds-aw22xxx.o
+leds/nubia_led/aw8695/Kconfig:# nubia led AW8695 driver configuration
+leds/nubia_led/aw8697/aw8697.c:#ifdef NUBIA_TOUCH_KEY
+leds/nubia_led/aw8697/aw8697.c:#ifdef NUBIA_TOUCH_KEY
+leds/nubia_led/aw8697/aw8697.c:#ifdef NUBIA_TOUCH_KEY
+leds/nubia_led/aw8697/aw8697.c:#ifdef NUBIA_TOUCH_KEY
+leds/nubia_led/aw8697/aw8697.h:#define NUBIA_TOUCH_KEY
+leds/nubia_led/aw8697/aw8697.h:#ifdef NUBIA_TOUCH_KEY
+leds/nubia_led/aw8697/Kconfig:#      nubia aw8697 for GKI test.
+leds/nubia_led/Kconfig:if NUBIA_LED
+leds/nubia_led/Kconfig:menuconfig NUBIA_LED
+leds/nubia_led/Kconfig:      nubia aw8697 for GKI test.
+leds/nubia_led/Kconfig:# nubia led driver configuration
+leds/nubia_led/Kconfig:	  Say Y here if you have a nubia led connected
+leds/nubia_led/Kconfig:source "drivers/leds/nubia_led/aw22xxx/Kconfig"
+leds/nubia_led/Kconfig:source "drivers/leds/nubia_led/aw8695/Kconfig"
+leds/nubia_led/Kconfig:source "drivers/leds/nubia_led/aw8697/Kconfig"
+leds/nubia_led/Kconfig:	tristate "nubia led driver"
+leds/nubia_led/Makefile:obj-$(CONFIG_NUBIA_LED)		+= aw22xxx/
+leds/nubia_led/Makefile:obj-$(CONFIG_NUBIA_LED)		+= aw8695/
+leds/nubia_led/Makefile:obj-$(CONFIG_NUBIA_LED)		+= aw8697/
+Makefile:obj-$(CONFIG_NUBIA_DRIVERS)	+= nubia/
+Makefile:obj-$(CONFIG_NUBIA_ESE)         += ese/
+Makefile:obj-$(CONFIG_NUBIA_FAN)     += fan/
+Makefile:obj-$(CONFIG_NUBIA_HW_VERSION)  += nubia_hw_version/
+nubia/bypass_acl/bypass_acl.c:	bypass_acl_kobj = kobject_create_and_add("nubia_bypass_acl", NULL);
+nubia/bypass_acl/bypass_acl.c:module_exit(nubia_bypass_acl_exit);
+nubia/bypass_acl/bypass_acl.c:module_init(nubia_bypass_acl_init);
+nubia/bypass_acl/bypass_acl.c:static int __init nubia_bypass_acl_init(void)
+nubia/bypass_acl/bypass_acl.c:static void __exit nubia_bypass_acl_exit(void)
+nubia/dp/Kconfig:	bool "NUBIA USB DP MODULES"
+nubia/dp/Kconfig:config NUBIA_USB_DP_MODULES
+nubia/dp/Makefile:obj-$(CONFIG_NUBIA_USB_DP_MODULES) += usb_switch_dp.o
+nubia/dp/usb_switch_dp.c:        { .compatible = "nubia,usb_switch_dp" },
+nubia/dp/usb_switch_dp.c:int __init nubia_usb_switch_dp_init(void)
+nubia/dp/usb_switch_dp.c:MODULE_ALIAS("platform:nubia_hw_version" );
+nubia/dp/usb_switch_dp.c:MODULE_DESCRIPTION("nubia_hw_version driver");
+nubia/dp/usb_switch_dp.c:module_exit(nubia_usb_switch_dp_exit);
+nubia/dp/usb_switch_dp.c:module_init(nubia_usb_switch_dp_init);
+nubia/dp/usb_switch_dp.c:                .name = "nubia,usb_switch_dp",
+nubia/dp/usb_switch_dp.c:		nubia_usb_switch_dp_enable(0);
+nubia/dp/usb_switch_dp.c:		nubia_usb_switch_dp_enable(0);
+nubia/dp/usb_switch_dp.c:		nubia_usb_switch_dp_enable(1);
+nubia/dp/usb_switch_dp.c:	printk("end nubia_usb_switch_dp_probe\n");
+nubia/dp/usb_switch_dp.c:	printk("entry nubia_parse_switcher_dt\n");
+nubia/dp/usb_switch_dp.c:	printk("entry nubia_usb_switch_dp_probe\n");
+nubia/dp/usb_switch_dp.c:        .probe = nubia_usb_switch_dp_probe,
+nubia/dp/usb_switch_dp.c:	rc = nubia_parse_switcher_dt(node);
+nubia/dp/usb_switch_dp.c:        .remove = nubia_usb_switch_dp_remove,
+nubia/dp/usb_switch_dp.c:static int nubia_parse_switcher_dt(struct device_node *node)
+nubia/dp/usb_switch_dp.c:static int  nubia_usb_switch_dp_probe(struct platform_device *pdev)
+nubia/dp/usb_switch_dp.c:static int nubia_usb_switch_dp_remove(struct platform_device *pdev)
+nubia/dp/usb_switch_dp.c:static void __exit nubia_usb_switch_dp_exit(void)
+nubia/dp/usb_switch_dp.c:void nubia_usb_switch_dp_enable(int en)
+nubia/ec_color/ec_color.c:		{ .compatible = "nubia,ec_color" },
+nubia/ec_color/ec_color.c:#ifdef NUBIA_EC_COLOR
+nubia/ec_color/ec_color.c:#ifdef NUBIA_EC_COLOR
+nubia/ec_color/ec_color.c:#ifdef NUBIA_EC_COLOR
+nubia/ec_color/ec_color.c:#ifdef NUBIA_EC_COLOR
+nubia/ec_color/ec_color.c:MODULE_DESCRIPTION("NUBIA_EC_COLOR DRIVER");
+nubia/ec_color/ec_color.h://#define NUBIA_EC_COLOR
+nubia/ec_color/ec_color.h:#ifdef NUBIA_EC_COLOR
+nubia/ec_color/ec_color.h:#ifdef NUBIA_EC_COLOR
+nubia/fingerprint/goodix/gf_spi.c:    #ifndef CONFIG_NUBIA_FP_GOODIX_GKI
+nubia/fingerprint/goodix/gf_spi.c:    #ifndef CONFIG_NUBIA_FP_GOODIX_GKI
+nubia/fingerprint/goodix/gf_spi.c:    #ifndef CONFIG_NUBIA_FP_GOODIX_GKI
+nubia/fingerprint/goodix/Kconfig:config NUBIA_FP_GOODIX_GW9658
+nubia/fingerprint/goodix/Makefile:obj-$(CONFIG_NUBIA_FP_GOODIX_GW9658) += gf_spi.o
+nubia/fingerprint/Kconfig:config NUBIA_FP_GOODIX
+nubia/fingerprint/Kconfig:config NUBIA_FP_GOODIX_GKI
+nubia/fingerprint/Kconfig:if NUBIA_FP_GOODIX
+nubia/fingerprint/Kconfig:source "drivers/nubia/fingerprint/goodix/Kconfig"
+nubia/fingerprint/Makefile:obj-$(CONFIG_NUBIA_FP_GOODIX)			+= goodix/
+nubia_hw_version/Kconfig:	bool "NUBIA HW CONFIG BY GPIO"
+nubia_hw_version/Kconfig:	bool "NUBIA HW CPU SERIAL NUM"
+nubia_hw_version/Kconfig:	bool "NUBIA_HW_GPIO_BY_PM"
+nubia_hw_version/Kconfig:	bool "NUBIA HW VER BY ADC"
+nubia_hw_version/Kconfig:	bool "NUBIA HW VERSION"
+nubia_hw_version/Kconfig:	bool "NUBIA HW VERSION DEBUG"
+nubia_hw_version/Kconfig:config NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/Kconfig:config NUBIA_HW_CPU_SERIAL_NUM
+nubia_hw_version/Kconfig:config NUBIA_HW_GPIO_BY_PM
+nubia_hw_version/Kconfig:config NUBIA_HW_VER_BY_ADC
+nubia_hw_version/Kconfig:config NUBIA_HW_VERSION
+nubia_hw_version/Kconfig:config NUBIA_HW_VERSION_DEBUG
+nubia_hw_version/Kconfig:	depends on NUBIA_HW_VERSION
+nubia_hw_version/Kconfig:	depends on NUBIA_HW_VERSION
+nubia_hw_version/Kconfig:	depends on NUBIA_HW_VERSION
+nubia_hw_version/Kconfig:	depends on NUBIA_HW_VERSION
+nubia_hw_version/Kconfig:	depends on NUBIA_HW_VERSION
+nubia_hw_version/Kconfig:		NUBIA HW CONFIG BY GPIO
+nubia_hw_version/Kconfig:	  NUBIA HW CPU SERIAL NUM
+nubia_hw_version/Kconfig:		NUBIA HW GPIO BY PM
+nubia_hw_version/Kconfig:		NUBIA HW VER BY ADC
+nubia_hw_version/Kconfig:	  NUBIA HW VERSION
+nubia_hw_version/Kconfig:################nubia hw_version config start################
+nubia_hw_version/Kconfig:		NUBIA HW VERSION DEBUG
+nubia_hw_version/Makefile:obj-$(CONFIG_NUBIA_HW_VERSION) += nubia_hw_version.o
+nubia_hw_version/nubia_hw_version.c:	__ATTR(chip_serial, 0664, nubia_cpu_serial_num_show, NULL);
+nubia_hw_version/nubia_hw_version.c:	__ATTR(config_version, 0664, nubia_config_standard_show, NULL);
+nubia_hw_version/nubia_hw_version.c:	__ATTR(cpu_serial_num, 0664, nubia_cpu_serial_num_show, NULL);
+nubia_hw_version/nubia_hw_version.c:	__ATTR(pcb_version, 0664, nubia_hw_pcb_version_show, NULL);
+nubia_hw_version/nubia_hw_version.c:	__ATTR(pcb_version_ext, 0664, nubia_hw_pcb_ext_show, NULL);
+nubia_hw_version/nubia_hw_version.c:        __ATTR(pcb_version_trans, 0664, nubia_hw_pcb_trans_show, NULL);
+nubia_hw_version/nubia_hw_version.c:	__ATTR(rf_version, 0664, nubia_hw_rf_band_show, NULL);
+nubia_hw_version/nubia_hw_version.c:	.attrs = nubia_hw_version_attrs,
+nubia_hw_version/nubia_hw_version.c:	__ATTR(wifi_config_type, 0664, nubia_wifi_config_type_show, NULL);
+nubia_hw_version/nubia_hw_version.c:        case NUBIA_GPIO_FLOAT:
+nubia_hw_version/nubia_hw_version.c:        case NUBIA_GPIO_FLOAT:
+nubia_hw_version/nubia_hw_version.c:        case NUBIA_GPIO_PULL_DOWN:
+nubia_hw_version/nubia_hw_version.c:        case NUBIA_GPIO_PULL_DOWN:
+nubia_hw_version/nubia_hw_version.c:        case NUBIA_GPIO_PULL_UP:
+nubia_hw_version/nubia_hw_version.c:        case NUBIA_GPIO_PULL_UP:
+nubia_hw_version/nubia_hw_version.c:        { .compatible = "nubia_hw_gpio_ctrl" },
+nubia_hw_version/nubia_hw_version.c:const char* nubia_get_hw_wifi(void)
+nubia_hw_version/nubia_hw_version.c:const char* nubia_get_rf_band_by_gpio(const struct hw_rf_band_gpio_map_str *pts,
+nubia_hw_version/nubia_hw_version.c:const struct hw_config_adc_map_st* nubia_get_config_table_item_by_adc(const struct hw_config_adc_map_st *pts,
+nubia_hw_version/nubia_hw_version.c:const struct hw_config_gpio_map_st* nubia_get_config_table_item_by_gpio(const struct hw_config_gpio_map_st *pts,
+nubia_hw_version/nubia_hw_version.c:const struct hw_pcb_adc_map_str* nubia_get_pcb_table_item_by_adc(const struct hw_pcb_adc_map_str *pts,
+nubia_hw_version/nubia_hw_version.c:const struct hw_pcb_gpio_map_str* nubia_get_pcb_table_item_by_gpio(const struct hw_pcb_gpio_map_str *pts,
+nubia_hw_version/nubia_hw_version.c:#define nubia_hw_version_debug(fmt, args...) do {if(debug_value==1)printk(KERN_INFO "[nubia_hw_version]"fmt, ##args);} while(0)
+nubia_hw_version/nubia_hw_version.c:#define NUBIA_PM_GPIO_PULLDOWN_10 4
+nubia_hw_version/nubia_hw_version.c:EXPORT_SYMBOL_GPL(nubia_get_config_standard);
+nubia_hw_version/nubia_hw_version.c:EXPORT_SYMBOL_GPL(nubia_get_hw_id);
+nubia_hw_version/nubia_hw_version.c:EXPORT_SYMBOL_GPL(nubia_get_hw_pcb_version);
+nubia_hw_version/nubia_hw_version.c:EXPORT_SYMBOL_GPL(nubia_get_hw_wifi);
+nubia_hw_version/nubia_hw_version.c:EXPORT_SYMBOL_GPL(nubia_get_rf_band_by_gpio);
+nubia_hw_version/nubia_hw_version.c:	gpio_data = devm_kzalloc(&pdev->dev, sizeof(struct nubia_gpio_pinctrl_info), GFP_KERNEL);
+nubia_hw_version/nubia_hw_version.c:	hw_version_kobj = kobject_create_and_add("nubia_hw_version", NULL);
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CPU_SERIAL_NUM
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CPU_SERIAL_NUM
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_CPU_SERIAL_NUM
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_GPIO_BY_PM
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_GPIO_BY_PM
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_GPIO_BY_PM
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_GPIO_BY_PM
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_GPIO_BY_PM
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_GPIO_BY_PM
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_GPIO_BY_PM
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.c:#ifdef CONFIG_NUBIA_HW_VERSION_DEBUG
+nubia_hw_version/nubia_hw_version.c:#if !defined(CONFIG_NUBIA_HW_CONFIG_BY_GPIO) || defined(CONFIG_NUBIA_HW_VER_BY_ADC)
+nubia_hw_version/nubia_hw_version.c:#if !defined(CONFIG_NUBIA_HW_CONFIG_BY_GPIO) || defined(CONFIG_NUBIA_HW_VER_BY_ADC)
+nubia_hw_version/nubia_hw_version.c:#if !defined(CONFIG_NUBIA_HW_CONFIG_BY_GPIO) || defined(CONFIG_NUBIA_HW_VER_BY_ADC)
+nubia_hw_version/nubia_hw_version.c:	if (nubia_gpio_ctrl1(pdev))
+nubia_hw_version/nubia_hw_version.c:	if (nubia_gpio_ctrl(pdev))
+nubia_hw_version/nubia_hw_version.c:#include <nubia_hw_version.h>
+nubia_hw_version/nubia_hw_version.c:	int gpio_value_A = nubia_config_gpio1_v;
+nubia_hw_version/nubia_hw_version.c:	int gpio_value_A = nubia_pcb_gpio1_v;
+nubia_hw_version/nubia_hw_version.c:	int gpio_value_A = nubia_rf_gpio1_v;
+nubia_hw_version/nubia_hw_version.c:	int gpio_value_B = nubia_config_gpio2_v;
+nubia_hw_version/nubia_hw_version.c:	int gpio_value_B = nubia_pcb_gpio2_v;
+nubia_hw_version/nubia_hw_version.c:	int gpio_value_B = nubia_rf_gpio2_v;
+nubia_hw_version/nubia_hw_version.c:int __init nubia_hw_version_init(void)
+nubia_hw_version/nubia_hw_version.c:int nubia_get_hw_id(void)
+nubia_hw_version/nubia_hw_version.c:int nubia_gpio_ctrl1(struct platform_device *pdev)
+nubia_hw_version/nubia_hw_version.c:int nubia_gpio_ctrl(struct platform_device *pdev)
+nubia_hw_version/nubia_hw_version.c:int nubia_hw_config_mv = 0;
+nubia_hw_version/nubia_hw_version.c:int nubia_hw_pcb_mv = 0;
+nubia_hw_version/nubia_hw_version.c:MODULE_ALIAS("platform:nubia_hw_version" );
+nubia_hw_version/nubia_hw_version.c:MODULE_DESCRIPTION("nubia_hw_version driver");
+nubia_hw_version/nubia_hw_version.c:module_exit(nubia_hw_version_exit);
+nubia_hw_version/nubia_hw_version.c:module_init(nubia_hw_version_init);
+nubia_hw_version/nubia_hw_version.c:                .name = "nubia_hw_ver_gpio",
+nubia_hw_version/nubia_hw_version.c:	nfc_gpio = nubia_get_gpio_status(nubia_pcb_gpio3_v);
+nubia_hw_version/nubia_hw_version.c:	nubia_config_gpio1_v += nubia_get_gpio_status(config_gpio1);
+nubia_hw_version/nubia_hw_version.c:	nubia_config_gpio1_v = nubia_get_gpio_status(config_gpio1);
+nubia_hw_version/nubia_hw_version.c:	nubia_config_gpio2_v += nubia_get_gpio_status(config_gpio2);
+nubia_hw_version/nubia_hw_version.c:	nubia_config_gpio2_v = nubia_get_gpio_status(config_gpio2);
+nubia_hw_version/nubia_hw_version.c:		       "nubia could not map QFPROM_CPU_SERIAL_NUM_LSB address\n");
+nubia_hw_version/nubia_hw_version.c:		nubia_cpu_serial_num_init();
+nubia_hw_version/nubia_hw_version.c:	nubia_cpu_serial_num_init();
+nubia_hw_version/nubia_hw_version.c:	nubia_get_config_standard(buf);
+nubia_hw_version/nubia_hw_version.c:	nubia_get_hw_pcb_version(buf);
+nubia_hw_version/nubia_hw_version.c:							nubia_hw_config_mv);
+nubia_hw_version/nubia_hw_version.c:						nubia_hw_config_mv);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_config_mv = adc_result;
+nubia_hw_version/nubia_hw_version.c:						nubia_hw_pcb_mv);
+nubia_hw_version/nubia_hw_version.c:					nubia_hw_pcb_mv);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_pcb_mv = adc_result;
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("config_type=%s\n", buf);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("hw_rf_band=%s\n", rf_buf);
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("invalid nubia config channel1=%x\n",pm_adc_channel);
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("invalid nubia pcb channel=%x\n",pm_adc_channel);
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("not setting up nubia hw vadc\n");
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("nubia_adc_phy=%d\n",(int)adc_result.physical/1000);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia_config_gpio1_v=%x,nubia_config_gpio2_v=%x\n",nubia_config_gpio1_v,nubia_config_gpio2_v);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia_hw_ver_probe\n");
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia_hw_version creat attributes end \n");
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia_hw_version creat attributes start \n");
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia_pcb_gpio1_v=%x,nubia_pcb_gpio2_v=%x,nubia_pcb_gpio3_v=%x\n",nubia_pcb_gpio1_v,nubia_pcb_gpio2_v,nubia_pcb_gpio3_v);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia pm channel1=%x\n",pm_adc_channel);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia pm channel=%x\n",pm_adc_channel);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia_pm_gpio1_v=%x,pm_gpio2=%x\n",nubia_pm_gpio1_v,nubia_pm_gpio2_v);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia pm gpio1=%x\n",pm_gpio1);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia pm gpio2=%x\n",pm_gpio2);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("nubia_rf_gpio1_v=%x,nubia_rf_gpio2_v=%x\n",nubia_rf_gpio1_v,nubia_rf_gpio2_v);
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("pcb_type=%x\n", pts_item->pcb_type);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("pcb_ver_ext=%s\n",buf);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("pcb_ver=%s\n",buf);
+nubia_hw_version/nubia_hw_version.c:        nubia_hw_version_debug("pcb_ver_trans=%s\n",buf);
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("pm gpio1 not found\n");
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("pm gpio2 not found\n");
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("read_gpio=%x\n", status);
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("TLMM config gpio1 not found\n");
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("TLMM config gpio2 not found\n");
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("TLMM pcb gpio1 not found\n");
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("TLMM pcb gpio2 not found\n");
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("TLMM pcb gpio3 not found\n");
+nubia_hw_version/nubia_hw_version.c:                nubia_hw_version_debug("TLMM pcb gpio3 not found\n");
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("TLMM rf gpio1 not found\n");
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("TLMM rf gpio2 not found\n");
+nubia_hw_version/nubia_hw_version.c:		nubia_hw_version_debug("wifi_type=%s\n", pts_item->wifi_type);
+nubia_hw_version/nubia_hw_version.c:	nubia_hw_version_debug("wifi_type=%s\n", wifi_type);
+nubia_hw_version/nubia_hw_version.c:	nubia_pcb_gpio1_v += nubia_get_gpio_status(pcb_gpio1);
+nubia_hw_version/nubia_hw_version.c:	nubia_pcb_gpio1_v = nubia_get_gpio_status(pcb_gpio1);
+nubia_hw_version/nubia_hw_version.c:	nubia_pcb_gpio2_v += nubia_get_gpio_status(pcb_gpio2);
+nubia_hw_version/nubia_hw_version.c:	nubia_pcb_gpio2_v = nubia_get_gpio_status(pcb_gpio2);
+nubia_hw_version/nubia_hw_version.c:	nubia_pcb_gpio3_v += nubia_get_gpio_status(pcb_gpio3);
+nubia_hw_version/nubia_hw_version.c:	nubia_pcb_gpio3_v = nubia_get_gpio_status(pcb_gpio3);
+nubia_hw_version/nubia_hw_version.c:	nubia_pcb_gpio4_v += nubia_get_gpio_status(pcb_gpio4);
+nubia_hw_version/nubia_hw_version.c:	nubia_pcb_gpio4_v = nubia_get_gpio_status(pcb_gpio4);
+nubia_hw_version/nubia_hw_version.c:	nubia_pm_gpio1_v += gpio_get_value(pm_gpio1);
+nubia_hw_version/nubia_hw_version.c:	nubia_pm_gpio1_v = nubia_get_gpio_status(pm_gpio1);
+nubia_hw_version/nubia_hw_version.c:		nubia_pm_gpio2_v += gpio_get_value(pm_gpio2);
+nubia_hw_version/nubia_hw_version.c:		nubia_pm_gpio2_v = nubia_get_gpio_status(pm_gpio2);
+nubia_hw_version/nubia_hw_version.c:	nubia_rf_gpio1_v += nubia_get_gpio_status(rf_gpio1);
+nubia_hw_version/nubia_hw_version.c:	nubia_rf_gpio1_v = nubia_get_gpio_status(rf_gpio1);
+nubia_hw_version/nubia_hw_version.c:	nubia_rf_gpio2_v += nubia_get_gpio_status(rf_gpio2);
+nubia_hw_version/nubia_hw_version.c:	nubia_rf_gpio2_v = nubia_get_gpio_status(rf_gpio2);
+nubia_hw_version/nubia_hw_version.c:	penv->vadc_dev = qpnp_get_vadc(&penv->pdev->dev, "nubia_hw");
+nubia_hw_version/nubia_hw_version.c:		pr_err("nubia hw pinctrl down state is null\n");
+nubia_hw_version/nubia_hw_version.c:		printk(KERN_ERR "nubia could not request_mem_region\n");
+nubia_hw_version/nubia_hw_version.c:		printk(KERN_ERR "nubia cpu_serial_num=0x%08X\n",
+nubia_hw_version/nubia_hw_version.c:		printk(KERN_ERR "%s: failed to create nubia_hw_version group attributes\n", __func__);
+nubia_hw_version/nubia_hw_version.c:		printk(KERN_ERR "%s: nubia_hw_version kobj create error\n", __func__);
+nubia_hw_version/nubia_hw_version.c:        .probe = nubia_hw_ver_probe,
+nubia_hw_version/nubia_hw_version.c:	pts_item = nubia_get_config_table_item_by_adc(hw_config_adc_map,
+nubia_hw_version/nubia_hw_version.c:	pts_item = nubia_get_config_table_item_by_adc(hw_config_adc_map,
+nubia_hw_version/nubia_hw_version.c:	pts_item = nubia_get_config_table_item_by_gpio(hw_config_gpio_map,
+nubia_hw_version/nubia_hw_version.c:	pts_item = nubia_get_config_table_item_by_gpio(hw_config_gpio_map,
+nubia_hw_version/nubia_hw_version.c:	pts_item = nubia_get_pcb_table_item_by_adc(hw_pcb_adc_map,
+nubia_hw_version/nubia_hw_version.c:	pts_item = nubia_get_pcb_table_item_by_adc(hw_pcb_adc_map,
+nubia_hw_version/nubia_hw_version.c:		pts_item = nubia_get_pcb_table_item_by_gpio(hw_pcb_gpio_map,
+nubia_hw_version/nubia_hw_version.c:	pts_item = nubia_get_pcb_table_item_by_gpio(hw_pcb_gpio_map,
+nubia_hw_version/nubia_hw_version.c:	pts_item = nubia_get_pcb_table_item_by_gpio(hw_pcb_gpio_map,
+nubia_hw_version/nubia_hw_version.c:	rc = gpio_request(config_gpio1, "NUBIA_HW_CONFIG_GPIO1");
+nubia_hw_version/nubia_hw_version.c:	rc = gpio_request(config_gpio2, "NUBIA_HW_CONFIG_GPIO2");
+nubia_hw_version/nubia_hw_version.c:	rc = gpio_request(pcb_gpio1, "NUBIA_HW_PCB_GPIO1");
+nubia_hw_version/nubia_hw_version.c:	rc = gpio_request(pcb_gpio2, "NUBIA_HW_PCB_GPIO2");
+nubia_hw_version/nubia_hw_version.c:	rc = gpio_request(pcb_gpio3, "NUBIA_HW_PCB_GPIO3");
+nubia_hw_version/nubia_hw_version.c:        rc = gpio_request(pcb_gpio4, "NUBIA_HW_PCB_GPIO4");
+nubia_hw_version/nubia_hw_version.c:	rc = gpio_request(pm_gpio1, "NUBIA_HW_PM_GPIO1");
+nubia_hw_version/nubia_hw_version.c:	rc = gpio_request(pm_gpio2, "NUBIA_HW_PM_GPIO2");
+nubia_hw_version/nubia_hw_version.c:	rc = gpio_request(rf_gpio1, "NUBIA_RF_PCB_GPIO1");
+nubia_hw_version/nubia_hw_version.c:	rc = gpio_request(rf_gpio2, "NUBIA_HW_RF_GPIO2");
+nubia_hw_version/nubia_hw_version.c:	rc = nubia_parse_hw_ver_adc_dt(node,&pcb_adc_channel);
+nubia_hw_version/nubia_hw_version.c:	rc = nubia_parse_hw_ver_config_adc_dt(node,&config_adc_channel);
+nubia_hw_version/nubia_hw_version.c:	rc = nubia_parse_hw_ver_config_gpio_dt(node,&config_gpio1,&config_gpio2);
+nubia_hw_version/nubia_hw_version.c:	rc = nubia_parse_hw_ver_gpio_dt(node,&pcb_gpio1,&pcb_gpio2);
+nubia_hw_version/nubia_hw_version.c:	rc = nubia_parse_hw_ver_pm_gpio_dt(node,&pm_gpio1,&pm_gpio2);
+nubia_hw_version/nubia_hw_version.c:	rc = nubia_parse_hw_ver_read_adc(config_adc_channel,&adc_result);
+nubia_hw_version/nubia_hw_version.c:	rc = nubia_parse_hw_ver_read_adc(pcb_adc_channel,&adc_result);
+nubia_hw_version/nubia_hw_version.c:	rc = nubia_parse_hw_ver_rf_gpio_dt(node,&rf_gpio1,&rf_gpio2);
+nubia_hw_version/nubia_hw_version.c:	rc = nubia_qpnp_pin_config(pm_gpio1,NUBIA_PM_GPIO_PULLDOWN_10);
+nubia_hw_version/nubia_hw_version.c:		rc = nubia_qpnp_pin_config(pm_gpio2,NUBIA_PM_GPIO_PULLDOWN_10);
+nubia_hw_version/nubia_hw_version.c:	rc = sysfs_create_group(hw_version_kobj,&nubia_hw_version_attr_group);
+nubia_hw_version/nubia_hw_version.c:        .remove = nubia_hw_ver_remove,
+nubia_hw_version/nubia_hw_version.c:	rf_buf = nubia_get_rf_band_by_gpio(hw_rf_band_gpio_map,
+nubia_hw_version/nubia_hw_version.c:static int  nubia_hw_ver_probe(struct platform_device *pdev)
+nubia_hw_version/nubia_hw_version.c:static int nubia_hw_ver_remove(struct platform_device *pdev)
+nubia_hw_version/nubia_hw_version.c:static int  nubia_parse_hw_ver_adc_dt(struct device_node *node, int* pcb_adc_channel_v)
+nubia_hw_version/nubia_hw_version.c:static int  nubia_parse_hw_ver_config_adc_dt(struct device_node *node,int* config_pm_adc_channel_v)
+nubia_hw_version/nubia_hw_version.c:static int  nubia_parse_hw_ver_config_gpio_dt(struct device_node *node,int* config_gpio1_v, int* config_gpio2_v)
+nubia_hw_version/nubia_hw_version.c:static int  nubia_parse_hw_ver_gpio_dt(struct device_node *node,int* pcb_gpio1_v, int* pcb_gpio2_v)
+nubia_hw_version/nubia_hw_version.c:static int  nubia_parse_hw_ver_pm_gpio_dt(struct device_node *node,int* pm_gpio1_v, int* pm_gpio2_v)
+nubia_hw_version/nubia_hw_version.c:static int	nubia_parse_hw_ver_read_adc(int pm_adc_channel_v,int *result)
+nubia_hw_version/nubia_hw_version.c:static int  nubia_parse_hw_ver_rf_gpio_dt(struct device_node *node,int* rf_gpio1_v, int* rf_gpio2_v)
+nubia_hw_version/nubia_hw_version.c:static ssize_t nubia_config_standard_show(struct kobject *kobj,
+nubia_hw_version/nubia_hw_version.c:static ssize_t nubia_cpu_serial_num_show(struct kobject *kobj,
+nubia_hw_version/nubia_hw_version.c:static ssize_t nubia_hw_pcb_ext_show(struct kobject *kobj,
+nubia_hw_version/nubia_hw_version.c:static ssize_t nubia_hw_pcb_trans_show(struct kobject *kobj,
+nubia_hw_version/nubia_hw_version.c:static ssize_t nubia_hw_pcb_version_show(struct kobject *kobj,
+nubia_hw_version/nubia_hw_version.c:static ssize_t nubia_hw_rf_band_show(struct kobject *kobj,
+nubia_hw_version/nubia_hw_version.c:static ssize_t nubia_wifi_config_type_show(struct kobject *kobj,
+nubia_hw_version/nubia_hw_version.c:static struct attribute_group nubia_hw_version_attr_group = {
+nubia_hw_version/nubia_hw_version.c:static struct attribute *nubia_hw_version_attrs[] = {
+nubia_hw_version/nubia_hw_version.c:static uint32_t nubia_get_cpu_serial_num(void)
+nubia_hw_version/nubia_hw_version.c:static uint8_t nubia_get_gpio_status(uint32_t gpio)
+nubia_hw_version/nubia_hw_version.c:static void __exit nubia_hw_version_exit(void)
+nubia_hw_version/nubia_hw_version.c:static void nubia_cpu_serial_num_init(void)
+nubia_hw_version/nubia_hw_version.c:            strcpy(buf,pcb_ext[NUBIA_GPIO_FLOAT]);
+nubia_hw_version/nubia_hw_version.c:            strcpy(buf,pcb_ext[NUBIA_GPIO_PULL_DOWN]);
+nubia_hw_version/nubia_hw_version.c:            strcpy(buf,pcb_ext[NUBIA_GPIO_PULL_UP]);
+nubia_hw_version/nubia_hw_version.c:            strcpy(buf,pcb_trans[NUBIA_GPIO_FLOAT]);
+nubia_hw_version/nubia_hw_version.c:            strcpy(buf,pcb_trans[NUBIA_GPIO_PULL_DOWN]);
+nubia_hw_version/nubia_hw_version.c:            strcpy(buf,pcb_trans[NUBIA_GPIO_PULL_UP]);
+nubia_hw_version/nubia_hw_version.c:	struct nubia_gpio_pinctrl_info *gpio_data;
+nubia_hw_version/nubia_hw_version.c:	struct nubia_gpio_pinctrl_info *gpio_data;
+nubia_hw_version/nubia_hw_version.c:        struct nubia_gpio_pinctrl_info *gpio_data;
+nubia_hw_version/nubia_hw_version.c:    switch(nubia_pcb_gpio3_v)
+nubia_hw_version/nubia_hw_version.c:    switch(nubia_pcb_gpio4_v)
+nubia_hw_version/nubia_hw_version.c:	sysfs_remove_group(hw_version_kobj,&nubia_hw_version_attr_group);
+nubia_hw_version/nubia_hw_version.c:	uint32_t chip_num = nubia_get_cpu_serial_num();
+nubia_hw_version/nubia_hw_version.c:uint8_t	nubia_config_gpio1_v = 0;
+nubia_hw_version/nubia_hw_version.c:uint8_t	nubia_config_gpio2_v = 0;
+nubia_hw_version/nubia_hw_version.c:uint8_t	nubia_pcb_gpio1_v = 0;
+nubia_hw_version/nubia_hw_version.c:uint8_t	nubia_pcb_gpio2_v = 0;
+nubia_hw_version/nubia_hw_version.c:uint8_t	nubia_pcb_gpio3_v = 0;
+nubia_hw_version/nubia_hw_version.c:uint8_t	nubia_pcb_gpio4_v = 0;
+nubia_hw_version/nubia_hw_version.c:uint8_t	nubia_pm_gpio1_v = 0;
+nubia_hw_version/nubia_hw_version.c:uint8_t	nubia_pm_gpio2_v = 0;
+nubia_hw_version/nubia_hw_version.c:uint8_t	nubia_rf_gpio1_v = 0;
+nubia_hw_version/nubia_hw_version.c:uint8_t	nubia_rf_gpio2_v = 0;
+nubia_hw_version/nubia_hw_version.c:void nubia_get_config_standard(char* result)
+nubia_hw_version/nubia_hw_version.c:void nubia_get_hw_pcb_version(char* result)
+nubia_hw_version/nubia_hw_version.c:	wifi_type = nubia_get_hw_wifi();
+nubia_hw_version/nubia_hw_version.h:#define __NUBIA_HW_VERSION_H__
+nubia_hw_version/nubia_hw_version.h:enum nubia_gpio_status {
+nubia_hw_version/nubia_hw_version.h:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.h:#ifdef CONFIG_NUBIA_HW_CONFIG_BY_GPIO
+nubia_hw_version/nubia_hw_version.h:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.h:#ifdef CONFIG_NUBIA_HW_VER_BY_ADC
+nubia_hw_version/nubia_hw_version.h:#ifndef __NUBIA_HW_VERSION_H__
+nubia_hw_version/nubia_hw_version.h: NUBIA_GPIO_FLOAT,//gpio float
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_FLOAT,     NUBIA_GPIO_FLOAT,		HW_E,  "MB_E"},
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_FLOAT, NUBIA_GPIO_FLOAT,    "wifi_murata", "config"},
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_FLOAT,     NUBIA_GPIO_PULL_DOWN,    HW_B3, "MB_B3"},
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_FLOAT,     NUBIA_GPIO_PULL_UP,      HW_B1, "MB_B1"},
+nubia_hw_version/nubia_hw_version.h: NUBIA_GPIO_PULL_DOWN = 0,//gpio pull down
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_PULL_DOWN, NUBIA_GPIO_FLOAT,        HW_C1, "MB_C1"},
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_PULL_DOWN, NUBIA_GPIO_PULL_DOWN,	"COMMON"},
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_PULL_DOWN, NUBIA_GPIO_PULL_DOWN,	HW_A,  "MB_A"},
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_PULL_DOWN, NUBIA_GPIO_PULL_DOWN,    "wifi_sky", "config"},
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_PULL_DOWN, NUBIA_GPIO_PULL_UP,	    HW_B,  "MB_B"},
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_PULL_DOWN, NUBIA_GPIO_PULL_UP,	"wifi_qorvo", "config"},
+nubia_hw_version/nubia_hw_version.h: NUBIA_GPIO_PULL_UP,//gpio pull up
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_PULL_UP,   NUBIA_GPIO_FLOAT,        HW_B2, "MB_B2"},
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_PULL_UP,   NUBIA_GPIO_PULL_DOWN,    HW_C,  "MB_C"},
+nubia_hw_version/nubia_hw_version.h:	{NUBIA_GPIO_PULL_UP,   NUBIA_GPIO_PULL_UP,      HW_D,  "MB_D"},
+nubia_hw_version/nubia_hw_version.h: NUBIA_GPIO_UNKNOWN,
+nubia_hw_version/nubia_hw_version.h:struct nubia_gpio_pinctrl_info {
+nubia/Kconfig:    bool "NUBIA_BYPASS_ACL"
+nubia/Kconfig:        bool "NUBIA_DP"
+nubia/Kconfig:    bool "NUBIA_EC_COLOR"
+nubia/Kconfig:        bool "NUBIA_SENSORS"
+nubia/Kconfig:        bool "NUBIA_SENSORS_SENS"
+nubia/Kconfig:	bool "NUBIA_TOUCH"
+nubia/Kconfig:comment "Nubia Device Drivers"
+nubia/Kconfig:config NUBIA_BYPASS_ACL
+nubia/Kconfig:config NUBIA_DP
+nubia/Kconfig:config NUBIA_DRIVERS
+nubia/Kconfig:config NUBIA_EC_COLOR
+nubia/Kconfig:config NUBIA_FINGERPRINT
+nubia/Kconfig:config NUBIA_SENSORS
+nubia/Kconfig:config NUBIA_SENSORS_SENS
+nubia/Kconfig:config NUBIA_TOUCH
+nubia/Kconfig:if NUBIA_DP
+nubia/Kconfig:if NUBIA_DRIVERS
+nubia/Kconfig:if NUBIA_FINGERPRINT
+nubia/Kconfig:if NUBIA_SENSORS
+nubia/Kconfig:if NUBIA_SENSORS_SENS
+nubia/Kconfig:if NUBIA_TOUCH
+nubia/Kconfig:#menuconfig NUBIA_DRIVERS
+nubia/Kconfig:menu "nubia drivers"
+nubia/Kconfig:# Nubia drivers configuration
+nubia/Kconfig:     Say Y here if you have enable NUBIA_BYPASS_ACL
+nubia/Kconfig:         Say Y here if you have enable NUBIA_DP
+nubia/Kconfig:     Say Y here if you have enable NUBIA_EC_COLOR
+nubia/Kconfig:	 Say Y here if you have enable NUBIA_FINGERPRINT
+nubia/Kconfig:         Say Y here if you have enable NUBIA_FINGERPRINT
+nubia/Kconfig:         Say Y here if you have enable NUBIA_SENSORS
+nubia/Kconfig:         Say Y here if you have enable NUBIA_SENSORS_SENS
+nubia/Kconfig:	  Say Y here if you want to enable NUBIA DRIVERS
+nubia/Kconfig:source "drivers/nubia/dp/Kconfig"
+nubia/Kconfig:source "drivers/nubia/fingerprint/Kconfig"
+nubia/Kconfig:source "drivers/nubia/sensors_sensitivity/Kconfig"
+nubia/Kconfig:source "drivers/nubia/stk3337/Kconfig"
+nubia/Kconfig:source "drivers/nubia/touch/Kconfig"
+nubia/Kconfig:	tristate "NUBIA DRIVERS"
+nubia/Kconfig:        tristate "NUBIA_FINGERPRINT"
+nubia/Makefile:# Makefile for the nubia drivers.
+nubia/Makefile:obj-$(CONFIG_NUBIA_BYPASS_ACL)                    += bypass_acl/
+nubia/Makefile:obj-$(CONFIG_NUBIA_DP)                   	  += dp/
+nubia/Makefile:obj-$(CONFIG_NUBIA_EC_COLOR)                      += ec_color/
+nubia/Makefile:obj-$(CONFIG_NUBIA_FINGERPRINT)                   += fingerprint/
+nubia/Makefile:obj-$(CONFIG_NUBIA_SENSORS_SENS)              	  += sensors_sensitivity/
+nubia/Makefile:obj-$(CONFIG_NUBIA_SENSORS)                       += stk3337/
+nubia/Makefile:obj-$(CONFIG_NUBIA_TOUCH)                         += touch/
+nubia/ps5013/ps5013.c:		{ .compatible = "nubia,ps5013" },
+nubia/ps5013/ps5013.c:MODULE_DESCRIPTION("NUBIA_PS5013 DRIVER");
+nubia/ps5013/ps5013.c:	ssd_kobj = kobject_create_and_add("nubia_ssd", NULL);
+nubia/sensors_sensitivity/Kconfig:config NUBIA_SENSORS_SENS_EN
+nubia/sensors_sensitivity/Makefile:obj-$(CONFIG_NUBIA_SENSORS_SENS_EN) += sensors_sensitivity.o
+nubia/sensors_sensitivity/sensors_sensitivity.c:MODULE_AUTHOR("Peripherial team, NUBIA");
+nubia/sensors_sensitivity/sensors_sensitivity.c:		NUBIA_MUTEX_LOCK(&data->sensors_sens_lock);
+nubia/sensors_sensitivity/sensors_sensitivity.c:		NUBIA_MUTEX_LOCK(&data->sensors_sens_lock);
+nubia/sensors_sensitivity/sensors_sensitivity.c:		NUBIA_MUTEX_LOCK(&data->sensors_sens_lock);
+nubia/sensors_sensitivity/sensors_sensitivity.c:		NUBIA_MUTEX_LOCK(&data->sensors_sens_lock);
+nubia/sensors_sensitivity/sensors_sensitivity.c:		NUBIA_MUTEX_UNLOCK(&data->sensors_sens_lock);
+nubia/sensors_sensitivity/sensors_sensitivity.c:		NUBIA_MUTEX_UNLOCK(&data->sensors_sens_lock);
+nubia/sensors_sensitivity/sensors_sensitivity.c:		NUBIA_MUTEX_UNLOCK(&data->sensors_sens_lock);
+nubia/sensors_sensitivity/sensors_sensitivity.c:		NUBIA_MUTEX_UNLOCK(&data->sensors_sens_lock);
+nubia/sensors_sensitivity/sensors_sensitivity.h:#define LOG_TAG "NUBIA_SENSORS_SENS"
+nubia/sensors_sensitivity/sensors_sensitivity.h:#define NUBIA_MUTEX_LOCK(m) { \
+nubia/sensors_sensitivity/sensors_sensitivity.h:#define NUBIA_MUTEX_LOCK(m) { \
+nubia/sensors_sensitivity/sensors_sensitivity.h:#define NUBIA_MUTEX_UNLOCK(m) { \
+nubia/sensors_sensitivity/sensors_sensitivity.h:#define NUBIA_MUTEX_UNLOCK(m) { \
+nubia/sensors_sensitivity/sensors_sensitivity.h:#ifdef NUBIA_MUTEX_DEBUG
+nubia/stk3337/Kconfig:config FEATURE_NUBIA_SENSORS_LOG_ON
+nubia/stk3337/Kconfig:config NUBIA_SENSORS_STK3337
+nubia/stk3337/Kconfig:	depends on NUBIA_SENSORS
+nubia/stk3337/Kconfig:	depends on NUBIA_SENSORS
+nubia/stk3337/Kconfig:	depends on NUBIA_SENSORS
+nubia/stk3337/Kconfig:		nubia device of ambient&&prox
+nubia/stk3337/Kconfig:		nubia device of ambient&&prox for gki
+nubia/stk3337/Kconfig:	tristate "NUBIA SENSORS LOG ON"
+nubia/stk3337/Makefile:obj-$(CONFIG_NUBIA_SENSORS_STK3337)	+= stk3x3x.o
+nubia/stk3337/sensor_common.h:#define LOG_TAG "NUBIA_SENSOR"
+nubia/stk3337/sensor_common.h:* This file is part of the nubia sensor common driver.
+nubia/stk3337/stk3x3x.c:/* Nubia add end */
+nubia/stk3337/stk3x3x.c:/* Nubia add end */
+nubia/stk3337/stk3x3x.c:/* Nubia add for ps calibration */
+nubia/stk3337/stk3x3x.c:/* Nubia add for ps calibration */
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:__ATTR(fp_mode,   0664,   synaptics_nubia_fp_mode_show,  synaptics_nubia_fp_mode_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:		   NULL, synaptics_nubia_bsp_mode_store);
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:		   NULL, synaptics_nubia_fpswitch_store);
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:		   NULL, synaptics_nubia_mode_store);
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:static inline ssize_t synaptics_nubia_bsp_mode_store(struct device *dev,
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:static inline ssize_t synaptics_nubia_fpswitch_store(struct device *dev,
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:static inline ssize_t synaptics_nubia_mode_store(struct device *dev,
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:static int synaptics_nubia_sysfs_node(void)
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c://static ssize_t synaptics_nubia_bsp_mode_show(struct device *dev,
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:static  ssize_t synaptics_nubia_bsp_mode_store(struct device *dev,
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:static  ssize_t synaptics_nubia_fp_mode_show(struct kobject *kobj,
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:static  ssize_t synaptics_nubia_fp_mode_store(struct kobject *kobj,
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:static  ssize_t synaptics_nubia_fpswitch_store(struct device *dev,
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:static  ssize_t synaptics_nubia_mode_store(struct device *dev,
+nubia/touch/goodix_berlin_driver/goodix_ts_core.c:  	synaptics_nubia_sysfs_node();
+nubia/touch/goodix_berlin_driver/goodix_ts_core.h:#define GOODIX_CORE_DRIVER_NAME		"nubia_goodix_ts"
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(game, 0666, gsx_nubia_game_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(highrate, 0666, gsx_nubia_highrate_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(levelregion, 0666, gsx_nubia_levelregion_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(NX709_highrate, 0666, gsx_nubia_NX709_highrate_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(NX709_prevention, 0666, gsx_nubia_NX709_prevention_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(NX709_sensitivity, 0666, gsx_nubia_NX709_sensitivity_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(NX709_separation, 0666, gsx_nubia_NX709_separation_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(open_prevention, 0666, gsx_nubia_open_prevention_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(open_sensitivity, 0666, gsx_nubia_open_sensitivity_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(prevention, 0666, gsx_nubia_prevention_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(rate, 0666, gsx_nubia_rate_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(sensitivity, 0666, gsx_nubia_sensitivity_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:	__EXTMOD_ATTR(separation, 0666, gsx_nubia_separation_show,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_game_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_highrate_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_levelregion_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_NX709_highrate_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_NX709_prevention_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_NX709_sensitivity_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_NX709_separation_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_open_prevention_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_open_sensitivity_store),		
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_prevention_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_rate_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_sensitivity_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:		gsx_nubia_separation_store),
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_game_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_game_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_highrate_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_highrate_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_levelregion_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_levelregion_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_NX709_highrate_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_NX709_highrate_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_NX709_prevention_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_NX709_prevention_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_NX709_sensitivity_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_NX709_sensitivity_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_NX709_separation_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_NX709_separation_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_open_prevention_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_open_prevention_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_open_sensitivity_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_open_sensitivity_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_prevention_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_prevention_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_rate_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_rate_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_sensitivity_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_sensitivity_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static ssize_t gsx_nubia_separation_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver/goodix_ts_gesture.c:static	ssize_t gsx_nubia_separation_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:__ATTR(fp_mode,   0664,   synaptics_nubia_fp_mode_show,  synaptics_nubia_fp_mode_store),
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:	if (!proc_mkdir("nubia_goodix_ts", NULL))
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:	proc_create("nubia_goodix_ts/tp_capacitance_data",
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:static inline ssize_t synaptics_nubia_fpswitch_show(struct device *dev,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:static inline ssize_t synaptics_nubia_fpswitch_store(struct device *dev,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:static int synaptics_nubia_sysfs_node(void)
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:static  ssize_t synaptics_nubia_fp_mode_show(struct kobject *kobj,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:static  ssize_t synaptics_nubia_fp_mode_store(struct kobject *kobj,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:static  ssize_t synaptics_nubia_fpswitch_show(struct device *dev,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:static  ssize_t synaptics_nubia_fpswitch_store(struct device *dev,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:static void synaptics_nubiaCtl_Re_Sus(struct goodix_ts_core *core_data)
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:static void synaptics_nubiaCtl_Re_Sus(struct goodix_ts_core *core_data);
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:			synaptics_nubiaCtl_Re_Sus(core_data);
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:	synaptics_nubiaCtl_Re_Sus(ts_core_data);
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:		   synaptics_nubia_fpswitch_show, synaptics_nubia_fpswitch_store);
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.c:	synaptics_nubia_sysfs_node();
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.h:#define CONFIG_NUBIA_DISP_PREFERENCE	1
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_core.h:#define GOODIX_CORE_DRIVER_NAME		"nubia_goodix_ts"
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:	__EXTMOD_ATTR(highrate, 0666, gsx_nubia_highrate_show,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:	__EXTMOD_ATTR(levelregion, 0666, gsx_nubia_levelregion_show,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:	__EXTMOD_ATTR(open_prevention, 0666, gsx_nubia_open_prevention_show,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:	__EXTMOD_ATTR(open_sensitivity, 0666, gsx_nubia_open_sensitivity_show,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:	__EXTMOD_ATTR(prevention, 0666, gsx_nubia_prevention_show,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:	__EXTMOD_ATTR(rate, 0666, gsx_nubia_rate_show,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:	__EXTMOD_ATTR(sensitivity, 0666, gsx_nubia_sensitivity_show,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:	__EXTMOD_ATTR(separation, 0666, gsx_nubia_separation_show,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:		gsx_nubia_highrate_store),
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:		gsx_nubia_levelregion_store),
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:		gsx_nubia_open_prevention_store),
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:		gsx_nubia_open_sensitivity_store),		
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:		gsx_nubia_prevention_store),
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:		gsx_nubia_rate_store),
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:		gsx_nubia_sensitivity_store),
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:		gsx_nubia_separation_store),
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static ssize_t gsx_nubia_highrate_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static	ssize_t gsx_nubia_highrate_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static ssize_t gsx_nubia_levelregion_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static	ssize_t gsx_nubia_levelregion_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static ssize_t gsx_nubia_open_prevention_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static	ssize_t gsx_nubia_open_prevention_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static ssize_t gsx_nubia_open_sensitivity_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static	ssize_t gsx_nubia_open_sensitivity_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static ssize_t gsx_nubia_prevention_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static	ssize_t gsx_nubia_prevention_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static ssize_t gsx_nubia_rate_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static	ssize_t gsx_nubia_rate_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static ssize_t gsx_nubia_sensitivity_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static	ssize_t gsx_nubia_sensitivity_store(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static ssize_t gsx_nubia_separation_show(struct goodix_ext_module *module,
+nubia/touch/goodix_berlin_driver_v1.0.1/goodix_ts_gesture.c:static	ssize_t gsx_nubia_separation_store(struct goodix_ext_module *module,
+nubia/touch/Kconfig:        bool "config nubia synaptics dsx"
+nubia/touch/Kconfig:config TOUCHSCREEN_NUBIA_SYNAPTICS_DSX
+nubia/touch/Kconfig:          Say Y here if you have a nubia touchscreen hxchipset connected
+nubia/touch/Kconfig:source "drivers/nubia/touch/goodix_berlin_driver_v1.0.1/Kconfig"
+nubia/touch/Kconfig:source "drivers/nubia/touch/synaptics_dsx/Kconfig"
+nubia/touch/Kconfig:        tristate "NUBIA SYNAPTICS DEVICE"
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:					ABS_MT_POSITION_X, nubia_x);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:					ABS_MT_POSITION_Y, nubia_y);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	__ATTR(fp_mode,        0664, synaptics_nubia_fp_mode_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	} else if((LEFT_FUZZY_RANGE<nubia_x)&&(nubia_x<LEFT_X_VALUE)) {
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	} else if((LEFT_X_VALUE<=nubia_x)&&(nubia_x<=RIGHT_X_VALUE)) {
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	} else if((LEFT_X_VALUE<=nubia_x)&&(nubia_x<=RIGHT_X_VALUE)) {
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	} else if((RIGHT_X_VALUE<nubia_x)&&(nubia_x<RIGHT_FUZZY_RANGE)) {
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			fp_x = nubia_x;
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			fp_y = nubia_y;
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_CONTROL_RESUME_SUSPEND
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_CONTROL_RESUME_SUSPEND
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_CONTROL_RESUME_SUSPEND
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_SYNAPTICS_FINGER_WAKE_NODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_SYNAPTICS_FINGER_WAKE_NODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_SYNAPTICS_TOUCH_GAME_MANUAL_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_SYNAPTICS_TOUCH_GAME_MANUAL_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_SYNAPTICS_TOUCH_GAME_MANUAL_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_SYNAPTICS_TOUCH_GAME_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_SYNAPTICS_TOUCH_GAME_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_SYNAPTICS_TOUCH_GAME_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_SYNAPTICS_TOUCH_GAME_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_SYNAPTICS_TOUCH_GAME_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		if((DOWN_Y_VALUE<=nubia_y)&&(nubia_y<=DONW_FUZZY_RANGE))
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	if((LEFT_X_VALUE<nubia_x)&&(nubia_x<RIGHT_X_VALUE)){
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:#ifndef NUBIA_CONTROL_RESUME_SUSPEND
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		if((UP_FUZZY_RANGE<nubia_y)&&(nubia_y<DONW_FUZZY_RANGE))
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		if((UP_FUZZY_RANGE<nubia_y)&&(nubia_y<DONW_FUZZY_RANGE))
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		if((UP_FUZZY_RANGE<=nubia_y)&&(nubia_y<=UP_Y_VALUE))
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		if((UP_Y_VALUE<nubia_y)&&(nubia_y<DOWN_Y_VALUE)) {
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	INIT_DELAYED_WORK(&rmi4_data->forced_resume_dw, synaptics_nubiaForcedResume);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			/***input nubia fp X & nubia fp Y end***/
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			/***input nubia fp X & nubia fp Y start***/
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	int nubia_x = 0;
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		int nubia_x, int nubia_y, unsigned char gesture_type)
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		int nubia_x, int nubia_y, unsigned char gesture_type)
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		int nubia_x, int nubia_y, unsigned char gesture_type)
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		int nubia_x, int nubia_y, unsigned char gesture_type);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		int nubia_x, int nubia_y, unsigned char gesture_type);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		int nubia_x, int nubia_y, unsigned char gesture_type);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	int nubia_y = 0;
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			nubia_fwu_sys_update_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		nubia_synap_gamemode_enable(rmi4_data, rmi4_data->game_mode);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		nubia_synap_gamemode_enable(rmi4_data, rmi4_data->game_mode);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		nubia_x = rmi4_data->nubia_detection[0] |(rmi4_data->nubia_detection[1] << 8);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		nubia_y = rmi4_data->nubia_detection[2] |(rmi4_data->nubia_detection[3] << 8);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		//pr_err("%s (X, Y):(%d,%d),(wx,wy):(%d, %d)", __func__, nubia_x, nubia_y,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			retval=nubia_synap_read_gamereg(rmi4_data);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			retval=nubia_synap_write_gamereg(rmi4_data);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		retval = synaptics_rmi4_reg_read(rmi4_data,NUBIA_GESTURE_ADDR,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:				rmi4_data->nubia_detection,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		//							rmi4_data->nubia_detection[4],
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		//							rmi4_data->nubia_detection[5]);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:				sizeof(rmi4_data->nubia_detection));
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t nubia_fwu_sys_update_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t nubia_fwu_sys_update_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_double_prevention_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_double_prevention_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_double_prevention_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_double_prevention_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_fpswitch_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_fpswitch_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_fpswitch_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_fpswitch_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_gamemode_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_gamemode_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_gamemode_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_gamemode_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_largepalm_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_largepalm_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_largepalm_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_largepalm_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_left_prevention_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_left_prevention_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_left_prevention_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_left_prevention_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_movable_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_movable_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_movable_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_movable_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_palm_sleep_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_palm_sleep_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_palm_sleep_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_palm_sleep_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_power_onoff_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_power_onoff_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_precision_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_precision_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_precision_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_precision_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_prevention_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_prevention_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_prevention_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_prevention_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_right_prevention_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_right_prevention_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_right_prevention_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_right_prevention_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_sensitivity_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_sensitivity_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_sensitivity_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_sensitivity_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_stability_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_stability_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_stability_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_stability_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_tptest_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_tptest_show(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_tptest_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static inline ssize_t synaptics_nubia_tptest_store(struct device *dev,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int nubia_synap_gamemode_enable(struct synaptics_rmi4_data *rmi4_data, bool on)
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int nubia_synap_read_gamereg(struct synaptics_rmi4_data *rmi4_data)
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int nubia_synap_read_gamereg(struct synaptics_rmi4_data *rmi4_data);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int nubia_synap_write_gamereg(struct synaptics_rmi4_data *rmi4_data)
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int nubia_synap_write_gamereg(struct synaptics_rmi4_data *rmi4_data);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int synaptics_nubia_fp_input(struct synaptics_rmi4_data *rmi4_data,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int synaptics_nubia_fp_input(struct synaptics_rmi4_data *rmi4_data,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int synaptics_nubia_report_handler(struct synaptics_rmi4_data *rmi4_data,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int synaptics_nubia_report_handler(struct synaptics_rmi4_data *rmi4_data,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int synaptics_nubia_shortcuts_input(struct synaptics_rmi4_data *rmi4_data,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int synaptics_nubia_shortcuts_input(struct synaptics_rmi4_data *rmi4_data,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static int synaptics_nubia_sysfs_node(void)
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static ssize_t synaptics_nubia_fp_mode_show(struct kobject *kobj,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static ssize_t synaptics_nubia_fp_mode_store(struct kobject *kobj,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static void synaptics_nubiaCtl_Re_Sus(struct synaptics_rmi4_data *rmi4_data)
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static void synaptics_nubiaCtl_Re_Sus(struct synaptics_rmi4_data *rmi4_data);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static void synaptics_nubiaForcedResume()
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static void synaptics_nubia_power_onoff(bool on)
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:static void synaptics_nubia_power_onoff(bool on);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	synaptics_nubiaCtl_Re_Sus(g_rmi4_data);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:				synaptics_nubiaCtl_Re_Sus(rmi4_data);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubiaCtl_Re_Sus(rmi4_data);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		synaptics_nubiaCtl_Re_Sus(rmi4_data);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_double_prevention_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_double_prevention_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_fp_input(rmi4_data, nubia_x, nubia_y, gesture_type);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:						synaptics_nubia_fp_mode_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_fpswitch_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_fpswitch_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_gamemode_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_gamemode_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_largepalm_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_largepalm_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_left_prevention_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_left_prevention_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_movable_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_movable_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:                        synaptics_nubia_palm_sleep_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:                        synaptics_nubia_palm_sleep_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	synaptics_nubia_power_onoff(input);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:                        synaptics_nubia_power_onoff_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_precision_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_precision_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_prevention_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_prevention_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_report_handler(rmi4_data, fp_x, fp_y, gesture_type);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	synaptics_nubia_report_handler(rmi4_data, nubia_x, nubia_y, gesture_type);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_right_prevention_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_right_prevention_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_sensitivity_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_sensitivity_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_shortcuts_input(rmi4_data, nubia_x, nubia_y, gesture_type);
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_stability_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_stability_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	synaptics_nubia_sysfs_node();
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_tptest_show,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:			synaptics_nubia_tptest_store),
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	ts_err(" finger area---->over-limit<---synaptics_nubia_fp_input F12");
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:	ts_err(" synaptics_nubia_shortcuts_input ");
+nubia/touch/synaptics_dsx/synaptics_dsx_core.c:		usleep_range(20000,25000);//nubia@:resuem to suspend must delay sometimes
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#define CONFIG_NUBIA_DISP_PREFERENCE	1
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#define NUBIA_CONTROL_RESUME_SUSPEND
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#define NUBIA_DEBUG_LOG
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#define NUBIA_GESTURE_ADDR	0x0402
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#define NUBIA_GESTURE_DETECTION_LEN 6
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#define NUBIA_SYNAPTICS_FINGER_WAKE_NODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#define NUBIA_SYNAPTICS_TOUCH_GAME_MANUAL_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#define NUBIA_SYNAPTICS_TOUCH_GAME_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#ifdef NUBIA_CONTROL_RESUME_SUSPEND
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#ifdef NUBIA_CONTROL_RESUME_SUSPEND
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#ifdef NUBIA_DEBUG_LOG
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#ifdef NUBIA_SYNAPTICS_TOUCH_GAME_MANUAL_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#ifdef NUBIA_SYNAPTICS_TOUCH_GAME_MODE
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:*NUBIA_WX means Major axis of touching ellipse,
+nubia/touch/synaptics_dsx/synaptics_dsx_core.h:	unsigned char nubia_detection[NUBIA_GESTURE_DETECTION_LEN];
+nubia/touch/synaptics_dsx/synaptics_dsx_fw_update.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_fw_update.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_fw_update.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_fw_update.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx.h:#define NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx.h:#define PLATFORM_DRIVER_NAME "nubia_synaptics_dsx"
+nubia/touch/synaptics_dsx/synaptics_dsx.h:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx.h:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx.h:#ifndef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_i2c.c:#ifdef NUBIA_TOUCH_SYNAPTICS
+nubia/touch/synaptics_dsx/synaptics_dsx_test_reporting.c://nubia add end
+nubia/touch/synaptics_dsx/synaptics_dsx_test_reporting.c://nubia add function start
+nubia/touch/synaptics_dsx/synaptics_dsx_test_reporting.c:	retval = synaptics_nubia_short_test();
+nubia/touch/synaptics_dsx/synaptics_dsx_test_reporting.c:	retval = synaptics_nubia_short_test();
+nubia/touch/synaptics_dsx/synaptics_dsx_test_reporting.c:static int synaptics_nubia_short_test(void)
+pinctrl/qcom/pinctrl-lahaina.c:#ifdef CONFIG_NUBIA_ESE   //delete pinctrl used ese spi gpio
+power/supply/Kconfig:config FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/power_supply_sysfs.c:extern ssize_t nubia_set_charge_bypass(const char *buf);
+power/supply/power_supply_sysfs.c:extern ssize_t nubia_set_charger(int value);
+power/supply/power_supply_sysfs.c:		#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/power_supply_sysfs.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/power_supply_sysfs.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/power_supply_sysfs.c:		  no need nubia_set_charger, (battery_temp > 47)&&(battery_voltage > 8100) is also
+power/supply/power_supply_sysfs.c:					nubia_set_charger(0);
+power/supply/power_supply_sysfs.c:					nubia_set_charger(1);
+power/supply/power_supply_sysfs.c:				nubia_set_charger(set_disenable_charger);
+power/supply/power_supply_sysfs.c:				nubia_set_charger(set_en_charger);
+power/supply/qti_battery_charger.c:	case BC_NUBIA_CHARGER_GET_FLOAT_CAPACITY:
+power/supply/qti_battery_charger.c:	case BC_NUBIA_CHARGER_GET_VDM:
+power/supply/qti_battery_charger.c:	case BC_NUBIA_SET_CHARGER:
+power/supply/qti_battery_charger.c:	charge_bypass_flag = nubia_charge_bcdev->bypass_charge;
+power/supply/qti_battery_charger.c:#define	BC_NUBIA_CHARGER_GET_FLOAT_CAPACITY	0x71
+power/supply/qti_battery_charger.c:#define BC_NUBIA_CHARGER_GET_VDM	0x70
+power/supply/qti_battery_charger.c:#define BC_NUBIA_SET_CHARGER   0x60
+power/supply/qti_battery_charger.c:	float_capacity_req_msg.hdr.opcode = BC_NUBIA_CHARGER_GET_FLOAT_CAPACITY;
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+power/supply/qti_battery_charger.c:	if(nubia_charge_bcdev->bypass_charge){
+power/supply/qti_battery_charger.c:	if(nubia_charge_bcdev == NULL)
+power/supply/qti_battery_charger.c:	if(nubia_charge_bcdev == NULL)
+power/supply/qti_battery_charger.c:	if(nubia_charge_bcdev == NULL)
+power/supply/qti_battery_charger.c:int nubia_battery_gpio_ctrl(struct battery_chg_dev *bcdev)
+power/supply/qti_battery_charger.c:	nubia_battery_gpio_ctrl(bcdev);
+power/supply/qti_battery_charger.c:        nubia_charge_bcdev = bcdev;
+power/supply/qti_battery_charger.c:	nubia_charge_bcdev->bypass_charge = val;
+power/supply/qti_battery_charger.c:			pr_err("Incorrect response length %zu for BC_NUBIA_CHARGER_GET_VDM\n",len);
+power/supply/qti_battery_charger.c:			pr_err("Incorrect response length %zu for BC_NUBIA_CHARGER_GET_VDM\n",len);
+power/supply/qti_battery_charger.c:    printk("nubia_get_charge_bypass bypass_charge=%d\n", nubia_charge_bcdev->bypass_charge);
+power/supply/qti_battery_charger.c:			printk(">>nubia>>>length %d for BC_NUBIA_CHARGER_GET_FLOAT_CAPACITY\n", bcdev->float_capacity);
+power/supply/qti_battery_charger.c:		printk(">>nubia>>>length %zu for BC_NUBIA_CHARGER_GET_FLOAT_CAPACITY\n", len);
+power/supply/qti_battery_charger.c:		printk(">>nubia>>>length %zu for BC_NUBIA_CHARGER_GET_VDM\n",len);
+power/supply/qti_battery_charger.c:	printk("nubia_set_charge_bypass mode: %d, buf=%d rc=%d\n", nubia_charge_bcdev->bypass_charge, buf, rc);
+power/supply/qti_battery_charger.c:	printk("nubia_set_charge_bypass mode: %d, rc=%d\n", value, rc);
+power/supply/qti_battery_charger.c:	rc = battery_chg_write(nubia_charge_bcdev, &req_msg, sizeof(req_msg));
+power/supply/qti_battery_charger.c:	rc = battery_chg_write(nubia_charge_bcdev, &req_msg, sizeof(req_msg));
+power/supply/qti_battery_charger.c:	req_msg.hdr.opcode = BC_NUBIA_SET_CHARGER;
+power/supply/qti_battery_charger.c:	req_msg.hdr.opcode = BC_NUBIA_SET_CHARGER;
+power/supply/qti_battery_charger.c:	req_msg.hdr.opcode = BC_NUBIA_SET_CHARGER;
+power/supply/qti_battery_charger.c:	req_msg.value = nubia_charge_bcdev->bypass_charge;
+power/supply/qti_battery_charger.c:	return (nubia_charge_bcdev==NULL) ? -1 : nubia_charge_bcdev->battery_type ;
+power/supply/qti_battery_charger.c:		return scnprintf(buf, PAGE_SIZE, "%s\n", "nubia_120w");
+power/supply/qti_battery_charger.c:		return scnprintf(buf, PAGE_SIZE, "%s\n", "nubia_65w");
+power/supply/qti_battery_charger.c:	return scnprintf(buf, PAGE_SIZE, "%s\n", nubia_charge_bcdev->bypass_charge==1 ? "on" : "off");
+power/supply/qti_battery_charger.c:		return scnprintf(buf, PAGE_SIZE, "%s\n", "nubia_none");
+power/supply/qti_battery_charger.c:ssize_t nubia_get_charge_bypass(char *buf)
+power/supply/qti_battery_charger.c:ssize_t nubia_set_charge_bypass(const char *buf)
+power/supply/qti_battery_charger.c:ssize_t nubia_set_charger(int value)
+power/supply/qti_battery_charger.c:struct battery_chg_dev *nubia_charge_bcdev = NULL;
+power/supply/qti_battery_charger.c:	vdm_req_msg.hdr.opcode = BC_NUBIA_CHARGER_GET_VDM;
+usb/core/hub.c:enum usb_device_speed nubia_global_otg_speed = USB_SPEED_UNKNOWN;
+usb/core/hub.c:				#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/core/hub.c:		#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/core/hub.c:#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/core/hub.c:#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/core/hub.c:#ifdef CONFIG_NUBIA_USB_DISABLE_LINK_PM
+usb/core/hub.c:#ifdef CONFIG_NUBIA_USB_DISABLE_LINK_PM
+usb/core/hub.c:#include "../nubia/nubia_usb_test.h"
+usb/core/hub.c:		nubia_global_otg_speed = USB_SPEED_HIGH;
+usb/core/hub.c:				nubia_global_otg_speed = USB_SPEED_SUPER;
+usb/core/hub.c:	nubia_usb_device = udev;
+usb/core/hub.c:struct usb_device *nubia_usb_device = NULL;
+usb/core/Kconfig:       bool "nubia disable link pm"
+usb/core/Kconfig:config NUBIA_USB_DISABLE_LINK_PM
+usb/dwc3/dwc3-msm.c:#include <linux/usb/nubia_usb_debug.h>
+usb/dwc3/dwc3-msm.c:	NUBIA_USB_INFO("Turn %d the gadget.\n", on);
+usb/dwc3/dwc3-msm.c:	printk(">>>nubia<<<dwc3_msm_usb_set_role cur_role = %d, state = %d, role = %d.\n", cur_role, state, role);
+usb/dwc3/ep0.c:#include <linux/usb/nubia_usb_debug.h>
+usb/dwc3/ep0.c:	NUBIA_USB_INFO("ctrl->bRequest = %d.\n", ctrl->bRequest);
+usb/dwc3/ep0.c:		NUBIA_USB_INFO("dwc3_ep0_delegate_req.\n");
+usb/dwc3/gadget.c:#include <linux/usb/nubia_usb_debug.h>
+usb/dwc3/gadget.c:	NUBIA_USB_INFO("dwc->revision is %02x.\n", dwc->revision);
+usb/dwc3/gadget.c:	NUBIA_USB_INFO("entry disconnect notify.\n");
+usb/dwc3/gadget.c:			NUBIA_USB_INFO("exit because DWC3_DEPEVT_EPCMDCMPLT.\n");
+usb/dwc3/gadget.c:			NUBIA_USB_INFO("exit because DWC3_EP_TRANSFER_STARTED.\n");
+usb/dwc3/gadget.c:		NUBIA_USB_INFO("exit because of dwc->dr_mode < = USB_DR_MODE_HOST.\n");
+usb/dwc3/gadget.c:	NUBIA_USB_INFO("is_on = %d, suspend = %d.\n", is_on, suspend);
+usb/dwc3/gadget.c:	NUBIA_USB_INFO("is_on is %d, dwc->dr_mode = %d, dwc->vbus_active = %d, dwc->gadget_driver = %p",
+usb/gadget/composite.c:#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/gadget/composite.c:#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/gadget/composite.c:#include "../nubia/nubia_usb_test.h"
+usb/gadget/composite.c:	nubia_usb_gadget = gadget;
+usb/gadget/composite.c:struct usb_gadget *nubia_usb_gadget = NULL;
+usb/gadget/configfs.c:#include <linux/usb/nubia_usb_debug.h>
+usb/gadget/configfs.c:		NUBIA_USB_INFO("probe driver the prop of sys.usb.config is %s.\n", *name);
+usb/gadget/configfs.c:		NUBIA_USB_INFO("start usb configuration notify.\n");
+usb/gadget/configfs.c:		NUBIA_USB_INFO("start usb connect notify.\n");
+usb/gadget/configfs.c:		NUBIA_USB_INFO("the prop of sys.usb.config is none,unregister_gadget.\n");
+usb/gadget/configfs.c:		NUBIA_USB_INFO("udc_name is null exit usb_gadget_unregister_driver flower.\n");
+usb/gadget/udc/core.c:#include <linux/usb/nubia_usb_debug.h>
+usb/gadget/udc/core.c:		NUBIA_USB_INFO("eixt usb_gadget_disconnect because of gadget is deactivated.\n");
+usb/gadget/udc/core.c:		NUBIA_USB_INFO("eixt usb_gadget_disconnect because of pullup failed.\n");
+usb/gadget/udc/core.c:		NUBIA_USB_INFO("entry the disconnect notify.\n");
+usb/gadget/udc/core.c:		NUBIA_USB_INFO("exit usb_gadget_unregister_driver because of the driver and driver-unbind is null.\n");
+usb/gadget/udc/core.c:		NUBIA_USB_INFO("exit vbus_session because of vbus_session not support.\n");
+usb/Kconfig:source "drivers/usb/nubia/Kconfig"
+usb/Makefile:obj-$(CONFIG_NUBIA_USB_TEST)	+= nubia/
+usb/nubia/Kconfig:        bool "NUBIA_USB_TEST"
+usb/nubia/Kconfig:config NUBIA_USB_TEST
+usb/nubia/Kconfig:#nubia add for usb test
+usb/nubia/Makefile:#nubia add for usb test file node
+usb/nubia/Makefile:obj-$(CONFIG_NUBIA_USB_TEST)             += nubia_usb_test.o
+usb/nubia/nubia_usb_test.c:	__ATTR(charger_bypass,    0664, 	nubia_charger_bypass_show,	nubia_charger_bypass_store),
+usb/nubia/nubia_usb_test.c:	//cancel_delayed_work_sync(&nubia_disp_val.lcd_states_work);
+usb/nubia/nubia_usb_test.c:	charge_kobj = kobject_create_and_add("nubia_charge", kernel_kobj);
+usb/nubia/nubia_usb_test.c: * Copyright (c) 2015 nubia <nubia@nubia.com.cn>
+usb/nubia/nubia_usb_test.c:	else if (nubia_global_otg_speed == USB_SPEED_HIGH)
+usb/nubia/nubia_usb_test.c:	else if (nubia_usb_gadget->speed == USB_SPEED_HIGH)
+usb/nubia/nubia_usb_test.c:	else if (nubia_usb_gadget->speed == USB_SPEED_SUPER)
+usb/nubia/nubia_usb_test.c:extern bool nubia_global_is_charge;
+usb/nubia/nubia_usb_test.c:extern enum usb_device_speed nubia_global_otg_speed;
+usb/nubia/nubia_usb_test.c:extern ssize_t nubia_get_charge_bypass(char *buf);
+usb/nubia/nubia_usb_test.c:extern ssize_t nubia_set_charge_bypass(const char *buf);
+usb/nubia/nubia_usb_test.c:extern struct usb_device *nubia_usb_device;
+usb/nubia/nubia_usb_test.c:extern struct usb_gadget *nubia_usb_gadget;
+usb/nubia/nubia_usb_test.c:extern u32 nubia_global_cc_orientation;
+usb/nubia/nubia_usb_test.c:	for (attr_count = 0; attr_count < ARRAY_SIZE(nubia_battery_class_attrs); attr_count++) {
+usb/nubia/nubia_usb_test.c:#if CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+usb/nubia/nubia_usb_test.c:#if CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+usb/nubia/nubia_usb_test.c:#if CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+usb/nubia/nubia_usb_test.c:#if CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+usb/nubia/nubia_usb_test.c:#ifdef CONFIG_FEATURE_NUBIA_BATTERY_1S_2S
+usb/nubia/nubia_usb_test.c:#ifdef CONFIG_NUBIA_DOCK_FEATURE 
+usb/nubia/nubia_usb_test.c:#ifdef CONFIG_NUBIA_DOCK_FEATURE 
+usb/nubia/nubia_usb_test.c:#ifdef CONFIG_NUBIA_DOCK_FEATURE 
+usb/nubia/nubia_usb_test.c://#ifdef CONFIG_NUBIA_SWITCH_LCD
+usb/nubia/nubia_usb_test.c:#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/nubia/nubia_usb_test.c:#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/nubia/nubia_usb_test.c:#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/nubia/nubia_usb_test.c:	if(global_is_dock2_detect && nubia_global_is_charge)
+usb/nubia/nubia_usb_test.c:        if (nubia_global_cc_orientation & ORIENTATION_CC1)
+usb/nubia/nubia_usb_test.c:        if (nubia_global_cc_orientation & ORIENTATION_CC2)
+usb/nubia/nubia_usb_test.c:	if (nubia_global_otg_speed == USB_SPEED_SUPER)
+usb/nubia/nubia_usb_test.c:	if(nubia_usb_device == NULL)
+usb/nubia/nubia_usb_test.c:	if(nubia_usb_device == NULL)
+usb/nubia/nubia_usb_test.c:	if(nubia_usb_gadget == NULL)
+usb/nubia/nubia_usb_test.c:	if(nubia_usb_gadget == NULL)
+usb/nubia/nubia_usb_test.c:	if (nubia_usb_gadget->speed == USB_SPEED_SUPER_PLUS)
+usb/nubia/nubia_usb_test.c:#include "nubia_usb_test.h"
+usb/nubia/nubia_usb_test.c:MODULE_AUTHOR("NUBIA USB Driver Team Software");
+usb/nubia/nubia_usb_test.c:MODULE_DESCRIPTION("NUBIA USB3.0 Saturation and Temperature Setting");
+usb/nubia/nubia_usb_test.c:module_exit(nubia_usb_test_exit);
+usb/nubia/nubia_usb_test.c:module_init(nubia_usb_test_init);
+usb/nubia/nubia_usb_test.c:		//NUBIA_DISP_ERROR("failed to create and add kobject\n");
+usb/nubia/nubia_usb_test.c:			//NUBIA_DISP_ERROR("failed to create sysfs attributes\n");
+usb/nubia/nubia_usb_test.c:	//NUBIA_DISP_INFO("please don't try to set the otg30\n");
+usb/nubia/nubia_usb_test.c:	//NUBIA_DISP_INFO("please don't try to set the usb30\n");
+usb/nubia/nubia_usb_test.c:	//NUBIA_DISP_INFO("start\n");
+usb/nubia/nubia_usb_test.c:	//NUBIA_DISP_INFO("success\n");
+usb/nubia/nubia_usb_test.c: * nubia_dp_preference.c - nubia usb display enhancement and temperature setting
+usb/nubia/nubia_usb_test.c:	nubia_set_charge_bypass(buf);
+usb/nubia/nubia_usb_test.c:		retval = sysfs_create_file(charge_kobj, &nubia_battery_class_attrs[attr_count].attr);
+usb/nubia/nubia_usb_test.c:static int __init nubia_usb_test_init(void)
+usb/nubia/nubia_usb_test.c:static ssize_t nubia_charger_bypass_show(struct kobject *kobj, struct kobj_attribute *attr, char *buf)
+usb/nubia/nubia_usb_test.c:static ssize_t nubia_charger_bypass_store(struct kobject *kobj, struct kobj_attribute *attr, const char *buf, size_t count)
+usb/nubia/nubia_usb_test.c:static struct kobj_attribute nubia_battery_class_attrs[] = {
+usb/nubia/nubia_usb_test.c:static void __exit nubia_usb_test_exit(void)
+usb/nubia/nubia_usb_test.c: * Supports NUBIA usb display enhancement and color temperature setting
+usb/nubia/nubia_usb_test.c:	val = nubia_get_charge_bypass(buf);
+usb/nubia/nubia_usb_test.h:#define CONFIG_NUBIA_USB30_FEATURE
+usb/nubia/nubia_usb_test.h:#define _NUBIA_USB_TEST_
+usb/nubia/nubia_usb_test.h:#ifndef _NUBIA_USB_TEST_
+usb/nubia/nubia_usb_test.h:void nubia_usb_test(void);
+usb/typec/ucsi/ucsi_glink.c:	#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/typec/ucsi/ucsi_glink.c:#ifdef CONFIG_NUBIA_USB30_FEATURE
+usb/typec/ucsi/ucsi_glink.c:#include <linux/usb/nubia_usb_debug.h>
+usb/typec/ucsi/ucsi_glink.c:#include "../../nubia/nubia_usb_test.h"
+usb/typec/ucsi/ucsi_glink.c:	nubia_global_cc_orientation = msg_ptr->receiver;
+usb/typec/ucsi/ucsi_glink.c:	NUBIA_USB_INFO("receiver the data form adsp cc_orientation = %02x.\n", msg_ptr->receiver);
+usb/typec/ucsi/ucsi_glink.c:u32 nubia_global_cc_orientation = 0x0;

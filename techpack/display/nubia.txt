@@ -1,0 +1,489 @@
+commit.txt:Binary file nubia.tar matches
+config/lahainadisp.conf:export CONFIG_NUBIA_DISP_PREFERENCE=y
+config/lahainadisp.conf:export CONFIG_NUBIA_HDMI_FEATURE=y
+config/lahainadispconf.h:#define CONFIG_NUBIA_DISP_PREFERENCE 1
+config/lahainadispconf.h:#define CONFIG_NUBIA_HDMI_FEATURE 1
+Makefile:obj-$(CONFIG_NUBIA_DISP_PREFERENCE) += nubia/
+Makefile:obj-$(CONFIG_NUBIA_HDMI_FEATURE) += nubiadp/
+msm/dp/dp_altmode.c:#define NUBIA_USB_LOG_TAG "ZtemtDP"
+msm/dp/dp_altmode.c:#include <linux/usb/nubia_usb_debug.h>
+msm/dp/dp_altmode.c:    //nubia add for plug out hub the mode can not change to default value after plugin
+msm/dp/dp_altmode.c:                NUBIA_USB_INFO("Cable detach entry disconnect.\n");
+msm/dp/dp_altmode.c:    NUBIA_USB_INFO("connected=%d, orientation=%d, pin=%d, hpd_state=%d.\n",
+msm/dp/dp_altmode.c:        NUBIA_USB_INFO("DP Attention entry attention.\n");
+msm/dp/dp_altmode.c:            NUBIA_USB_INFO("DP Configure entry configure.\n");
+msm/dp/dp_altmode.c:	NUBIA_USB_INFO(">>>nubia<<<altmode->connected = %d, usb_state = %d.\n", altmode->connected, state);
+msm/dp/dp_altmode.c:#undef NUBIA_USB_LOG_TAG
+msm/dp/dp_ctrl.c:	#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_ctrl.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_ctrl.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_ctrl.c:#include "../../nubiadp/nubia_dp_preference.h"
+msm/dp/dp_debug.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_debug.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_debug.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_debug.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_debug.c:#include "../../nubiadp/nubia_dp_preference.h"
+msm/dp/dp_display.c:extern struct dp_aux *global_nubia_dp_aux;
+msm/dp/dp_display.c:	global_nubia_dp_aux = dp->aux;
+msm/dp/dp_display.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dp/dp_display.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_display.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_display.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_display.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_display.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_display.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_display.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/dp/dp_display.c:#include "../../nubiadp/nubia_dp_preference.h"
+msm/dp/dp_display.c://nubia add disable hdcp function begin
+msm/dp/dp_display.c://nubia add disable hdcp function end
+msm/dp/dp_display.c:    //nubia add disable the hdcp function begin.
+msm/dp/dp_display.c:    //nubia add disable the hdcp function end.
+msm/dsi/dsi_defs.h:#define NUBIA_DEBUG(fmt, ...)	DRM_DEV_INFO(NULL, "[nubia-dsi-debug]: "fmt, \
+msm/dsi/dsi_defs.h:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_display.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_display.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_display.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_display.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_display.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_display.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_display.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_display.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_display.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_display.c:#include "../../nubia/nubia_disp_preference.h"
+msm/dsi/dsi_display.c:				nubia_check_flash_demura(display->panel);
+msm/dsi/dsi_display.c:		NUBIA_DEBUG("boot_disp->name is %s ++ \n", boot_disp->name);
+msm/dsi/dsi_display.c:	NUBIA_DEBUG("dsi_display_dev_probe [%s] ++ \n",pdev->name);
+msm/dsi/dsi_display.c:	NUBIA_DEBUG("dsi_display_init ++: %s\n", display->name);
+msm/dsi/dsi_display.c:	NUBIA_DEBUG("get disply :[%s]++ \n", display->name);
+msm/dsi/dsi_display.c:		NUBIA_DEBUG("mdp_node full name is %s ++", mdp_node->full_name);
+msm/dsi/dsi_display.c:		NUBIA_DEBUG("mdp_node name is %s ++", mdp_node->name);
+msm/dsi/dsi_display.c:		NUBIA_DEBUG("nubia esd extra check ++");
+msm/dsi/dsi_display.c:					NUBIA_DEBUG("vesa power only check last parameter, mismatch: 0x%x, status_value:0x%x, i:%d",
+msm/dsi/dsi_display.c:			nubia_read_panel_type(display->panel);
+msm/dsi/dsi_display.c:	nubia_set_dsi_ctrl(display, display->display_type);
+msm/dsi/dsi_display.c:		rc = nubia_check_data_ctrl_flag(panel);
+msm/dsi/dsi_display.c:		rc = nubia_check_demura_flag(panel);
+msm/dsi/dsi_display.c:void nubia_display_set_backlight(struct dsi_display *display) {
+msm/dsi/dsi_panel.c:		DSI_ERR("nubia none panel do not read panel reg \n");
+msm/dsi/dsi_panel.c:		DSI_ERR("nubia none panel do not read panel reg \n");
+msm/dsi/dsi_panel.c:		DSI_ERR("nubia none panel do not write panel reg \n");
+msm/dsi/dsi_panel.c:extern struct nubia_disp_type nubia_disp_val;
+msm/dsi/dsi_panel.c:	if ((bl_lvl == 4095) && (nubia_disp_val.cabc != CABC_OFF)) {
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifndef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#ifndef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.c:#include "../../nubia/nubia_disp_preference.h"
+msm/dsi/dsi_panel.c:int nubia_backlight_covert2(struct dsi_panel *panel, int value)
+msm/dsi/dsi_panel.c:int nubia_check_data_ctrl_flag(struct dsi_panel *panel)
+msm/dsi/dsi_panel.c:int nubia_check_demura_flag(struct dsi_panel *panel)
+msm/dsi/dsi_panel.c:int nubia_dsi_panel_cabc(struct dsi_panel *panel, uint32_t cabc_modes)
+msm/dsi/dsi_panel.c:int nubia_dsi_panel_hbm(struct dsi_panel *panel, uint32_t value)
+msm/dsi/dsi_panel.c:int nubia_dsi_panel_lhbm(struct dsi_panel *panel, uint32_t state)
+msm/dsi/dsi_panel.c:int nubia_dsi_panel_read_reg(struct dsi_panel *panel, uint8_t addr, u8 *reg_val, size_t len)
+msm/dsi/dsi_panel.c:int nubia_dsi_panel_write_reg(struct dsi_panel *panel, uint8_t addr)
+msm/dsi/dsi_panel.c:int nubia_enable_data_scaling(struct dsi_panel *panel, bool enable)
+msm/dsi/dsi_panel.c:int nubia_enable_dimming_feature(struct dsi_panel *panel, bool enable)
+msm/dsi/dsi_panel.c:int nubia_enable_dimming_feature(struct dsi_panel *panel, bool enable);
+msm/dsi/dsi_panel.c:int nubia_set_aod_brightness(struct dsi_panel *panel, uint32_t value)
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("11 dsi->mode_flags = 0x%x\n", dsi->mode_flags);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("22 dsi->mode_flags = 0x%x\n", dsi->mode_flags);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("33 dsi->mode_flags = 0x%x\n", dsi->mode_flags);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("after nubia backlight, bl_lvl = %d\n",bl_lvl);
+msm/dsi/dsi_panel.c:			NUBIA_DEBUG("AOD mode brightness set ok, value =0x%x", value);
+msm/dsi/dsi_panel.c:			NUBIA_DEBUG("AOD mode brightness set ok, value =0x%x", value);
+msm/dsi/dsi_panel.c:			NUBIA_DEBUG("AOD mode brightness set ok, value =0x%x", value);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("backlight type:%d lvl:%d\n", bl->type, bl_lvl);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("before nubia backlight, value = %d\n", value);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("ctrl:%d qsync off\n", ctrl_idx);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("ctrl:%d qsync on\n", ctrl_idx);
+msm/dsi/dsi_panel.c:		NUBIA_DEBUG("demura flag = 0x%x, 0x%x, 0x%x \n",
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("enter aod mode success!");
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("exit aod mode, fps value = %d", cur_fps);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("firmware_id = 0x%x\n", firmware_id);
+msm/dsi/dsi_panel.c:		NUBIA_DEBUG("HBM DISABLE -");
+msm/dsi/dsi_panel.c:		NUBIA_DEBUG("HBM ENABLE +");
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("hbm send uevent:%s ok ", envp[0]);
+msm/dsi/dsi_panel.c:			NUBIA_DEBUG("local AOD mode brightness set ok value=0x%x", value);
+msm/dsi/dsi_panel.c:			NUBIA_DEBUG("nubia_set_aod_brightness_local befor=%d default=3840",value);
+msm/dsi/dsi_panel.c:			NUBIA_DEBUG("nubia_set_aod_brightness_local  value =%d", value);
+msm/dsi/dsi_panel.c:		NUBIA_DEBUG("panel in HBM mode, need disable cabc!!\n");
+msm/dsi/dsi_panel.c:		NUBIA_DEBUG("Read reg data:[%d] 0x%x \n", i, rx_buf[i]);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("%s: bin_data = 0x%02x \n", __func__, *bin_data);
+msm/dsi/dsi_panel.c:		NUBIA_DEBUG("%s: data ctrl flag = 0x%x \n", __func__, flag_data[0]);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("%s ntk_panel_power_off %s ++ ", panel->name, __func__);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("%s ntk_panel_power_on %s ++ ", panel->name, __func__);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("%s:nubia_check_flash_demura++ \n", __func__);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("%s:panel->demura_flashed = %d \n", __func__, panel->demura_flashed);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("%s:panel->supported_dfps = %d \n", __func__, panel->supported_dfps);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("%s %s ++ ", panel->name, __func__);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("%s %s -- ", panel->name, __func__);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("%s vtdr_panel_power_off %s ++ ", panel->name, __func__);
+msm/dsi/dsi_panel.c:	NUBIA_DEBUG("%s vtdr_panel_power_on %s ++ ", panel->name, __func__);
+msm/dsi/dsi_panel.c:		nubia_demura_on(panel);
+msm/dsi/dsi_panel.c:	nubia_disp_val.dfps = cur_fps;
+msm/dsi/dsi_panel.c:	nubia_disp_val.panel_cur_brightness = bl_lvl;
+msm/dsi/dsi_panel.c:	nubia_disp_val.panel_firmware_id = firmware_id;
+msm/dsi/dsi_panel.c:		nubia_enable_dimming_feature(panel, false);
+msm/dsi/dsi_panel.c:		nubia_enable_dimming_feature(panel, false);
+msm/dsi/dsi_panel.c:		nubia_enable_dimming_feature(panel, true);
+msm/dsi/dsi_panel.c:	nubia_enable_dimming_feature(panel, true);
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-cabc-command-level1",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-cabc-command-level1-state",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-cabc-command-level2",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-cabc-command-level2-state",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-cabc-command-level3",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-cabc-command-level3-state",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-cabc-command-off",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-cabc-command-off-state",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-hbm-command-off",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-hbm-command-off-state",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-hbm-command-on",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-hbm-command-on-state",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-lhbm-fp-command-off",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-lhbm-fp-command-off-state",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-lhbm-fp-command-on",
+msm/dsi/dsi_panel.c:	"nubia,mdss-dsi-lhbm-fp-command-on-state",
+msm/dsi/dsi_panel.c:	nubia_set_aod_brightness_local(panel, nubia_disp_val.aod_brightness);
+msm/dsi/dsi_panel.c:		//rc = nubia_dsi_panel_cabc(panel, CABC_OFF);
+msm/dsi/dsi_panel.c:	rc = nubia_dsi_pwr_enable_regulator(&panel->power_info, "vdd", false);
+msm/dsi/dsi_panel.c:	rc = nubia_dsi_pwr_enable_regulator(&panel->power_info, "vdd", false);
+msm/dsi/dsi_panel.c:	rc = nubia_dsi_pwr_enable_regulator(&panel->power_info, "vddio", false);
+msm/dsi/dsi_panel.c:	rc = nubia_dsi_pwr_enable_regulator(&panel->power_info, "vddio", false);
+msm/dsi/dsi_panel.c:	rc = nubia_dsi_pwr_enable_regulator(&panel->power_info, "vddio", true);
+msm/dsi/dsi_panel.c:	rc = nubia_dsi_pwr_enable_regulator(&panel->power_info, "vddio", true);
+msm/dsi/dsi_panel.c:	rc = nubia_dsi_pwr_enable_regulator(&panel->power_info, "vdd", true);
+msm/dsi/dsi_panel.c:	rc = nubia_dsi_pwr_enable_regulator(&panel->power_info, "vdd", true);
+msm/dsi/dsi_panel.c:		rc = nubia_enable_data_scaling(panel, false);
+msm/dsi/dsi_panel.c:		rc = nubia_enable_data_scaling(panel, true);
+msm/dsi/dsi_panel.c:static int nubia_set_aod_brightness_local(struct dsi_panel *panel, uint32_t value)
+msm/dsi/dsi_panel.c:		value = nubia_backlight_covert2(panel, value);
+msm/dsi/dsi_panel.c:void nubia_check_flash_demura(struct dsi_panel *panel)
+msm/dsi/dsi_panel.c:void nubia_demura_on(struct dsi_panel *panel)
+msm/dsi/dsi_panel.c:void nubia_read_panel_type(struct dsi_panel *panel)
+msm/dsi/dsi_panel.h:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.h:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.h:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.h:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.h:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_panel.h:int nubia_check_data_ctrl_flag(struct dsi_panel *panel);
+msm/dsi/dsi_panel.h:int nubia_check_demura_flag(struct dsi_panel *panel);
+msm/dsi/dsi_panel.h:int nubia_dsi_panel_cabc(struct dsi_panel *panel, uint32_t cabc_modes);
+msm/dsi/dsi_panel.h:int nubia_dsi_panel_hbm(struct dsi_panel *panel, uint32_t state);
+msm/dsi/dsi_panel.h:int nubia_dsi_panel_lhbm(struct dsi_panel *panel, uint32_t state);
+msm/dsi/dsi_panel.h:int nubia_dsi_panel_read_reg(struct dsi_panel *panel, uint8_t addr, u8 *reg_val, size_t len);
+msm/dsi/dsi_panel.h:int nubia_dsi_panel_write_reg(struct dsi_panel *panel, uint8_t addr);
+msm/dsi/dsi_panel.h:int nubia_set_aod_brightness(struct dsi_panel *panel, uint32_t value);
+msm/dsi/dsi_panel.h:void nubia_check_flash_demura(struct dsi_panel *panel);
+msm/dsi/dsi_panel.h:void nubia_read_panel_type(struct dsi_panel *panel);
+msm/dsi/dsi_pwr.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_pwr.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_pwr.c:int nubia_dsi_pwr_enable_regulator(struct dsi_regulator_info *regs,
+msm/dsi/dsi_pwr.c:	NUBIA_DEBUG("nubia_dsi_pwr_enable_regulator:regs->refcount = %d", regs->refcount);
+msm/dsi/dsi_pwr.c:				NUBIA_DEBUG("vreg: %s ++\n", vreg->vreg_name);
+msm/dsi/dsi_pwr.c:				NUBIA_DEBUG("vreg: %s -- \n", vreg->vreg_name);
+msm/dsi/dsi_pwr.c: * nubia_dsi_pwr_enable_vreg() - enable/disable regulator
+msm/dsi/dsi_pwr.c:		rc = nubia_dsi_pwr_enable_vreg(regs, reg_name, false);
+msm/dsi/dsi_pwr.c:		rc = nubia_dsi_pwr_enable_vreg(regs, reg_name, true);
+msm/dsi/dsi_pwr.c:static int nubia_dsi_pwr_enable_vreg(struct dsi_regulator_info *regs,
+msm/dsi/dsi_pwr.h:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/dsi/dsi_pwr.h:int nubia_dsi_pwr_enable_regulator(struct dsi_regulator_info *regs,
+msm/dsi/dsi_pwr.h: * nubia_dsi_pwr_enable_regulator() - enable a set of regulator by vreg_name
+msm/msm_atomic.c:		DRM_DEBUG("nubia_disp_val.hbm_state= %d, hbm_mode_state= %d ++!\n",
+msm/msm_atomic.c:                DRM_DEBUG("nubia_disp_val.hbm_state= %d, hbm_mode_state = %d --!\n",
+msm/msm_atomic.c:extern struct dsi_display *nubia_display;
+msm/msm_atomic.c:extern struct nubia_disp_type nubia_disp_val;
+msm/msm_atomic.c:			hbm_mode_state = nubia_disp_val.hbm_state;
+msm/msm_atomic.c:                        hbm_mode_state = nubia_disp_val.hbm_state;
+msm/msm_atomic.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/msm_atomic.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/msm_atomic.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/msm_atomic.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/msm_atomic.c:	if (hbm_mode_state != nubia_disp_val.hbm_state) {
+msm/msm_atomic.c:        if (hbm_mode_state != nubia_disp_val.hbm_state) {
+msm/msm_atomic.c:		if (nubia_disp_val.hbm_state == 4095) {
+msm/msm_atomic.c:                if (nubia_disp_val.hbm_state != 4095) {
+msm/msm_atomic.c:#include "../nubia/nubia_disp_preference.h"
+msm/msm_atomic.c:			nubia_disp_val.hbm_state, hbm_mode_state);
+msm/msm_atomic.c:                        nubia_disp_val.hbm_state, hbm_mode_state);
+msm/msm_atomic.c:			nubia_dsi_panel_hbm(nubia_display->panel, nubia_disp_val.hbm_state);
+msm/msm_atomic.c:                        nubia_dsi_panel_hbm(nubia_display->panel, nubia_disp_val.hbm_state);
+msm/sde_edid_parser.c:extern u32 nubia_global_cc_orientation;
+msm/sde_edid_parser.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/sde_edid_parser.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/sde_edid_parser.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/sde_edid_parser.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/sde_edid_parser.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/sde_edid_parser.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/sde_edid_parser.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/sde_edid_parser.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+msm/sde_edid_parser.c:				if(is_big_1080p || (nubia_global_cc_orientation & IVR_9)){
+msm/sde_edid_parser.c:			if (mode->vrefresh == FPS_144 && h == H_MIN && v == V_MIN && (nubia_global_cc_orientation & IVR_9)){
+msm/sde_edid_parser.c:#include "../nubiadp/nubia_dp_preference.h"
+msm/sde_edid_parser.c:		//nubia add filter 144HZ for voc mointor cannot touping 144
+msm/sde_edid_parser.c:		//nubia add filter the 2048x1152 for some compatibility issue
+msm/sde_edid_parser.c:		//nubia add modify for IVR_4 cannot touping 144 in 573
+msm/sde_edid_parser.c:		//nubia add modify for IVR 9 cannot touping 144 in 553
+msm/sde_edid_parser.c:		//nubia add modify for philips 200 cannot touping 144 in 573
+msm/sde_edid_parser.c:		//nubia filter for Mi
+msm/sde_edid_parser.c:		//nubia filter for Mi
+msm/sde_edid_parser.c:				|| (nubia_global_cc_orientation & IVR_4)))
+msm/sde_edid_parser.c:				&& ((nubia_global_cc_orientation & PHILIPS_2)
+msm/sde/sde_connector.c:		bl_lvl = nubia_backlight_covert(display,brightness);
+msm/sde/sde_connector.c:		brightness = nubia_disp_val.bl_limit;
+msm/sde/sde_connector.c:	if(brightness > nubia_disp_val.bl_limit)
+msm/sde/sde_connector.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/sde/sde_connector.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/sde/sde_connector.c:#ifdef CONFIG_NUBIA_DISP_PREFERENCE
+msm/sde/sde_connector.c:#include "../../nubia/nubia_disp_preference.h"
+msm/sde/sde_connector.c:int nubia_backlight_covert(struct dsi_display *display,
+msm/sde/sde_connector.c:		//Nubia 4095 -> 2047, 4080 -> 2040
+msm/sde/sde_connector.c:	NUBIA_DEBUG("after nubia covert backlight, bl_lvl = %d\n",bl_lvl);
+msm/sde/sde_connector.c:	NUBIA_DEBUG("before nubia covert backlight, value = %d\n", value);
+msm/sde/sde_connector.c:	NUBIA_DEBUG("bl: thermal max brightness cap:%lu\n", val);
+msm/sde/sde_connector.c:		NUBIA_DEBUG("Panel in HBM mode, not allowed set brightness!!\n");
+msm/sde/sde_connector.c:	NUBIA_DEBUG("sde_backlight_device_update_status :%d ++\n", brightness);
+msm/sde/sde_connector.c:		NUBIA_DEBUG("sde_connector_helper_bridge_disable:backlight=%d \n", c_conn->bl_device->props.brightness);
+msm/sde/sde_connector.c:		NUBIA_DEBUG("sde_connector_helper_bridge_enable:backlight=%d \n", c_conn->bl_device->props.brightness);
+nubiadp/Makefile:#add nubia dp test file node
+nubiadp/Makefile:obj-$(CONFIG_NUBIA_HDMI_FEATURE) += nubia_dp_preference.o 
+nubiadp/nubia_dp_preference.c: * Copyright (c) 2015 nubia <nubia@nubia.com.cn>
+nubiadp/nubia_dp_preference.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+nubiadp/nubia_dp_preference.c:	if(global_nubia_dp_aux == NULL)
+nubiadp/nubia_dp_preference.c:	if(global_nubia_dp_aux == NULL)
+nubiadp/nubia_dp_preference.c:	if ((global_nubia_dp_aux->state & DP_STATE_TRAIN_1_SUCCEEDED) && (global_nubia_dp_aux->state & DP_STATE_TRAIN_2_SUCCEEDED))
+nubiadp/nubia_dp_preference.c:	if (!nubia_global_enhace_kobj) {
+nubiadp/nubia_dp_preference.c:#include "nubia_dp_preference.h"
+nubiadp/nubia_dp_preference.c:	kobject_put(nubia_global_enhace_kobj);
+nubiadp/nubia_dp_preference.c:	kobject_put(nubia_global_enhace_kobj);
+nubiadp/nubia_dp_preference.c:MODULE_AUTHOR("NUBIA USB Driver Team Software");
+nubiadp/nubia_dp_preference.c:MODULE_DESCRIPTION("NUBIA USB DISPLAY Saturation and Temperature Setting");
+nubiadp/nubia_dp_preference.c:module_exit(nubia_dp_preference_exit);
+nubiadp/nubia_dp_preference.c:module_init(nubia_dp_preference_init);
+nubiadp/nubia_dp_preference.c://		NUBIA_DISP_ERROR("failed to create and add kobject\n");
+nubiadp/nubia_dp_preference.c://			NUBIA_DISP_ERROR("failed to create sysfs attributes\n");
+nubiadp/nubia_dp_preference.c://	NUBIA_DISP_INFO("please don't try to set the link_statue\n");
+nubiadp/nubia_dp_preference.c://	NUBIA_DISP_INFO("start\n");
+nubiadp/nubia_dp_preference.c://	NUBIA_DISP_INFO("start\n");
+nubiadp/nubia_dp_preference.c://	NUBIA_DISP_INFO("success\n");
+nubiadp/nubia_dp_preference.c://	nubia_dp_aux = display;
+nubiadp/nubia_dp_preference.c: * nubia_dp_preference.c - nubia usb display enhancement and temperature setting
+nubiadp/nubia_dp_preference.c:	printk("NUBIA_DP:clearing debug modes\n");
+nubiadp/nubia_dp_preference.c:	printk("NUBIA_DP:hdisplay = %d, vdisplay = %d, vrefresh = %d, aspect_ratio = %d\n", 
+nubiadp/nubia_dp_preference.c:		printk("NUBIA-->entry lcd_enhance fail nubia_global_enhace_kobj = %x\n", nubia_global_enhace_kobj);
+nubiadp/nubia_dp_preference.c:		retval2 = sysfs_create_file(nubia_global_enhace_kobj, &disp_attrs[attr_count2].attr);
+nubiadp/nubia_dp_preference.c:static int __init nubia_dp_preference_init(void)
+nubiadp/nubia_dp_preference.c:static void __exit nubia_dp_preference_exit(void)
+nubiadp/nubia_dp_preference.c:struct dp_aux *global_nubia_dp_aux = NULL;
+nubiadp/nubia_dp_preference.c:struct kobject *nubia_global_enhace_kobj = NULL;
+nubiadp/nubia_dp_preference.c: * Supports NUBIA usb display enhancement and color temperature setting
+nubiadp/nubia_dp_preference.c:		sysfs_remove_file(nubia_global_enhace_kobj, &disp_attrs[attr_count2].attr);
+nubiadp/nubia_dp_preference.c://void nubia_set_usbdp_ctrl(struct dp_aux *display)
+nubiadp/nubia_dp_preference.h://#define  CONFIG_NUBIA_HDMI_FEATURE
+nubiadp/nubia_dp_preference.h:#define _NUBIA_DP_PREFERENCE_
+nubiadp/nubia_dp_preference.h:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+nubiadp/nubia_dp_preference.h:#ifndef _NUBIA_DP_PREFERENCE_
+nubiadp/nubia_dp_preference.h:void nubia_dp_preference(void);
+nubiadp/nubia_dp_preference.h://void nubia_set_usbdp_ctrl(struct dp_aux *display);
+nubia/Makefile:obj-$(CONFIG_NUBIA_DISP_PREFERENCE) += nubia_disp_preference.o
+nubia/nubia_disp_preference.c:	__ATTR(nubia_lcd_trace_code, 0664, nubia_lcd_trace_code_show, nubia_lcd_trace_code_store),
+nubia/nubia_disp_preference.c:	__ATTR(nubia_panel_reg, 0664, nubia_panel_reg_show, nubia_panel_reg_store),
+nubia/nubia_disp_preference.c: * Copyright (c) 2015 nubia <nubia@nubia.com.cn>
+nubia/nubia_disp_preference.c:extern struct kobject *nubia_global_enhace_kobj;
+nubia/nubia_disp_preference.c:extern void nubia_display_set_backlight(struct dsi_display *display);
+nubia/nubia_disp_preference.c:	for (i = 0; i < nubia_disp_val.panel_reg_lens; i++) {
+nubia/nubia_disp_preference.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+nubia/nubia_disp_preference.c:#ifdef CONFIG_NUBIA_HDMI_FEATURE
+nubia/nubia_disp_preference.c:	if (nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if(nubia_display == NULL) {
+nubia/nubia_disp_preference.c:	if (nubia_display->panel->ddic_vendor == NOVATEK) {
+nubia/nubia_disp_preference.c:	if (nubia_disp_val.bl_limit > 4095)
+nubia/nubia_disp_preference.c:		if (nubia_disp_val.en_cabc)
+nubia/nubia_disp_preference.c:	if(!nubia_disp_val.en_cabc) {
+nubia/nubia_disp_preference.c:	if (nubia_disp_val.en_dfps)
+nubia/nubia_disp_preference.c:	if (nubia_disp_val.hbm_state != 4095) {
+nubia/nubia_disp_preference.c:	if (nubia_disp_val.panel_firmware_id)
+nubia/nubia_disp_preference.c:	if (((val != CABC_OFF) && (nubia_disp_val.panel_cur_brightness == 4095)) ||
+nubia/nubia_disp_preference.c:#include "nubia_disp_preference.h"
+nubia/nubia_disp_preference.c:MODULE_AUTHOR("NUBIA LCD Driver Team Software");
+nubia/nubia_disp_preference.c:MODULE_DESCRIPTION("NUBIA LCD DISPLAY Color Saturation and Temperature Setting");
+nubia/nubia_disp_preference.c:module_exit(nubia_disp_preference_exit);
+nubia/nubia_disp_preference.c:module_init(nubia_disp_preference_init);
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("failed to create and add kobject\n");
+nubia/nubia_disp_preference.c:			NUBIA_DISP_ERROR("failed to create sysfs attributes\n");
+nubia/nubia_disp_preference.c:			NUBIA_DISP_ERROR("invalid aod_brightness params!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("invalid cabc_enable val = %d\n", val);
+nubia/nubia_disp_preference.c:			NUBIA_DISP_ERROR("invalid cabc val = %d\n", val);
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("invalid hbm params! value = %d\n", val);
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("invalid hbm state params! value = %d\n", val);
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no cabc\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("no nubia_display node!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_ERROR("unsupport code !!!\n");
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("buf = %s\n", buf);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("buf = %s\n", buf);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("cabc value = %d\n", val);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("get reg address = 0x%x , len = %d\n", addr, len);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("Get trace_code = %s\n", nubia_disp_val.panel_trace_code);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("hbm change done!!!%d\n", nubia_disp_val.hbm_state);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("LHBM mode value = %d\n", val);
+nubia/nubia_disp_preference.c:		NUBIA_DISP_INFO("panel in HBM mode, need disable cabc!!\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_INFO("panel in HBM mode, needn't set bl_limit[%d]\n", nubia_disp_val.bl_limit);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO(" panel_reg_lens = %s" , nubia_disp_val.panel_trace_code);
+nubia/nubia_disp_preference.c:			NUBIA_DISP_INFO("Read reg[0x%x][%d] = 0x%x\n", addr, i, *(reg_val + i));
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("ret = %d, panel_reg_lens = %d\n", ret, nubia_disp_val.panel_reg_lens);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("start\n");
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("start %s\n", dsi_type);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("success\n");
+nubia/nubia_disp_preference.c:		NUBIA_DISP_INFO("success to set aod mode brightness as = %d\n", val);
+nubia/nubia_disp_preference.c:		NUBIA_DISP_INFO("success to set bl_limit = [%d]\n", nubia_disp_val.bl_limit);
+nubia/nubia_disp_preference.c:		NUBIA_DISP_INFO("success to set cabc as = %d\n", val);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("success to set cabc_enable as = %d\n", val);
+nubia/nubia_disp_preference.c:		NUBIA_DISP_INFO("success to set hbm mode as = %d\n", val);
+nubia/nubia_disp_preference.c:		NUBIA_DISP_INFO("success to set local hbm mode as = %d\n", val);
+nubia/nubia_disp_preference.c:			NUBIA_DISP_INFO("trace_code_val1[0x%x][%d] = 0x%x\n", addr1, i, *(reg_val1 + i));
+nubia/nubia_disp_preference.c:			NUBIA_DISP_INFO("trace_code_val1[0x%x][%d] = %c\n", addr1, i, (char)reg_val1[i]);
+nubia/nubia_disp_preference.c:			NUBIA_DISP_INFO("trace_code_val1[0x%x][%d] = %c\n", addr1, i, (char)reg_val2[i]);
+nubia/nubia_disp_preference.c:			NUBIA_DISP_INFO("trace_code_val2[0x%x][%d] = 0x%x\n", addr2, i, *(reg_val2 + i));
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("[uid:%d, pid:%d] AOD mode brightness value = %d\n", current->cred->uid.val, current->tgid, val);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("[uid:%d, pid:%d]HBM mode value %d\n", current->cred->uid.val, current->tgid, val);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("[uid:%d, pid:%d]HBM state value %d\n", current->cred->uid.val, current->tgid, val);
+nubia/nubia_disp_preference.c:	//NUBIA_DISP_INFO("val = 0x%x\n", val);
+nubia/nubia_disp_preference.c:	NUBIA_DISP_INFO("Waiting hbm state feedback \n");
+nubia/nubia_disp_preference.c:		nubia_display = display;
+nubia/nubia_disp_preference.c:	nubia_display->panel->hbm_change_done = false;
+nubia/nubia_disp_preference.c:		nubia_display_set_backlight(nubia_display);//set backlight again
+nubia/nubia_disp_preference.c: * nubia_disp_preference.c - nubia lcd display color enhancement and temperature setting
+nubia/nubia_disp_preference.c:	nubia_disp_val.aod_brightness = val;
+nubia/nubia_disp_preference.c:		nubia_disp_val.bl_limit = 4095;
+nubia/nubia_disp_preference.c:	nubia_disp_val.bl_limit = val;
+nubia/nubia_disp_preference.c:		nubia_disp_val.cabc = val;
+nubia/nubia_disp_preference.c:	nubia_disp_val.en_cabc = val;
+nubia/nubia_disp_preference.c:		nubia_disp_val.hbm_mode = val;
+nubia/nubia_disp_preference.c:		nubia_disp_val.hbm_mode = val;
+nubia/nubia_disp_preference.c:	nubia_disp_val.hbm_state = val;
+nubia/nubia_disp_preference.c:			nubia_disp_val.panel_reg_addr,
+nubia/nubia_disp_preference.c:	nubia_disp_val.panel_reg_addr = addr;
+nubia/nubia_disp_preference.c:	nubia_disp_val.panel_reg_lens = len;
+nubia/nubia_disp_preference.c:			nubia_disp_val.panel_reg_val[i]);
+nubia/nubia_disp_preference.c:			nubia_disp_val.panel_reg_val[i] = reg_val[i];
+nubia/nubia_disp_preference.c:			//nubia_disp_val.panel_trace_code += hex_to_char(reg_val2[i]);
+nubia/nubia_disp_preference.c:			nubia_disp_val.panel_trace_code[j] = (char)reg_val1[i];
+nubia/nubia_disp_preference.c:			nubia_disp_val.panel_trace_code[j] = (char)reg_val2[i];
+nubia/nubia_disp_preference.c:			nubia_disp_val.trace_code_val1[i] = reg_val1[i];
+nubia/nubia_disp_preference.c:			nubia_disp_val.trace_code_val2[i] = reg_val2[i];
+nubia/nubia_disp_preference.c:	nubia_global_enhace_kobj = enhance_kobj;
+nubia/nubia_disp_preference.c:		nubia_sec_display = display;
+nubia/nubia_disp_preference.c:	ret = nubia_dsi_panel_cabc(nubia_display->panel, val);
+nubia/nubia_disp_preference.c:	ret = nubia_dsi_panel_hbm(nubia_display->panel, val);
+nubia/nubia_disp_preference.c:	ret = nubia_dsi_panel_lhbm(nubia_display->panel, val);
+nubia/nubia_disp_preference.c:	ret = nubia_dsi_panel_read_reg(nubia_display->panel, addr1, reg_val1, len1);
+nubia/nubia_disp_preference.c:	ret = nubia_dsi_panel_read_reg(nubia_display->panel, addr2, reg_val2, len2);
+nubia/nubia_disp_preference.c:	ret = nubia_dsi_panel_read_reg(nubia_display->panel, addr, reg_val, len);
+nubia/nubia_disp_preference.c:	ret = nubia_dsi_panel_write_reg(nubia_display->panel, page_addr);
+nubia/nubia_disp_preference.c:	ret = nubia_set_aod_brightness(nubia_display->panel, val);
+nubia/nubia_disp_preference.c:		return snprintf(buf, PAGE_SIZE, "0x%x\n", nubia_disp_val.panel_firmware_id);
+nubia/nubia_disp_preference.c:	return snprintf(buf, PAGE_SIZE, "%d\n", nubia_disp_val.aod_brightness);
+nubia/nubia_disp_preference.c:	return snprintf(buf, PAGE_SIZE, "%d\n", nubia_disp_val.bl_limit);
+nubia/nubia_disp_preference.c:				return snprintf(buf, PAGE_SIZE, "%d\n", nubia_disp_val.cabc);
+nubia/nubia_disp_preference.c:		return snprintf(buf, PAGE_SIZE, "%d\n", nubia_disp_val.dfps);
+nubia/nubia_disp_preference.c:	return snprintf(buf, PAGE_SIZE, "%d\n", nubia_disp_val.en_cabc);
+nubia/nubia_disp_preference.c:	return snprintf(buf, PAGE_SIZE, "%d\n", nubia_disp_val.hbm_mode);
+nubia/nubia_disp_preference.c:	return snprintf(buf, PAGE_SIZE, "%d\n", nubia_disp_val.hbm_state);
+nubia/nubia_disp_preference.c:	return snprintf(buf, PAGE_SIZE, "%d\n", nubia_disp_val.hbm_state);
+nubia/nubia_disp_preference.c:	return snprintf(buf, PAGE_SIZE, "%d\n", nubia_disp_val.lhbm_mode);
+nubia/nubia_disp_preference.c:	return snprintf(buf, PAGE_SIZE, "%d\n", nubia_disp_val.panel_cur_brightness);
+nubia/nubia_disp_preference.c:	return snprintf(buf, PAGE_SIZE, "%s\n", nubia_disp_val.panel_trace_code);
+nubia/nubia_disp_preference.c:static int __init nubia_disp_preference_init(void)
+nubia/nubia_disp_preference.c:static ssize_t nubia_lcd_trace_code_show(struct kobject *kobj,
+nubia/nubia_disp_preference.c:static ssize_t nubia_lcd_trace_code_store(struct kobject *kobj,
+nubia/nubia_disp_preference.c:static ssize_t nubia_panel_reg_show(struct kobject *kobj,
+nubia/nubia_disp_preference.c:static ssize_t nubia_panel_reg_store(struct kobject *kobj,
+nubia/nubia_disp_preference.c:static void __exit nubia_disp_preference_exit(void)
+nubia/nubia_disp_preference.c:struct dsi_display *nubia_display = NULL;
+nubia/nubia_disp_preference.c:struct dsi_display *nubia_sec_display = NULL;
+nubia/nubia_disp_preference.c:	struct mipi_dsi_device *dsi = &nubia_display->panel->mipi_device;
+nubia/nubia_disp_preference.c:struct nubia_disp_type nubia_disp_val = {
+nubia/nubia_disp_preference.c: * Supports NUBIA lcd display color enhancement and color temperature setting
+nubia/nubia_disp_preference.c:		((val != CABC_OFF) && (nubia_display->panel->hbm_mode == true))) {
+nubia/nubia_disp_preference.c:void nubia_set_dsi_ctrl(struct dsi_display *display, const char *dsi_type)
+nubia/nubia_disp_preference.c:	wait_event(hbm_feedback_event, nubia_display->panel->hbm_change_done);
+nubia/nubia_disp_preference.h:#define NUBIA_DISP_COLORTMP_DEBUG        0
+nubia/nubia_disp_preference.h:#define NUBIA_DISP_DEBUG(fmt, args...)
+nubia/nubia_disp_preference.h:#define  NUBIA_DISP_DEBUG(fmt, args...) printk(KERN_DEBUG "[%s] [%s: %d] "  fmt, \
+nubia/nubia_disp_preference.h:#define NUBIA_DISP_ERROR(fmt, args...)
+nubia/nubia_disp_preference.h:#define NUBIA_DISP_ERROR(fmt, args...) printk(KERN_ERR "[%s] [%s: %d] "  fmt, \
+nubia/nubia_disp_preference.h:#define NUBIA_DISP_INFO(fmt, args...)
+nubia/nubia_disp_preference.h:#define NUBIA_DISP_INFO(fmt, args...) printk(KERN_ERR "[%s] [%s: %d] "  fmt, \
+nubia/nubia_disp_preference.h:#define NUBIA_DISP_LOG_ON
+nubia/nubia_disp_preference.h:#define NUBIA_DISP_LOG_TAG "ZtemtDisp"
+nubia/nubia_disp_preference.h:#define _NUBIA_DISP_PREFERENCE_
+nubia/nubia_disp_preference.h:extern struct nubia_disp_type nubia_disp_val;
+nubia/nubia_disp_preference.h:#ifdef  NUBIA_DISP_DEBUG_ON
+nubia/nubia_disp_preference.h:#ifdef  NUBIA_DISP_LOG_ON
+nubia/nubia_disp_preference.h:#ifndef _NUBIA_DISP_PREFERENCE_
+nubia/nubia_disp_preference.h:	NUBIA_DISP_LOG_TAG, __FUNCTION__, __LINE__, ##args)
+nubia/nubia_disp_preference.h:	NUBIA_DISP_LOG_TAG, __FUNCTION__, __LINE__, ##args)
+nubia/nubia_disp_preference.h:	NUBIA_DISP_LOG_TAG, __FUNCTION__, __LINE__, ##args)
+nubia/nubia_disp_preference.h:struct nubia_disp_type{
+nubia/nubia_disp_preference.h:void nubia_disp_preference(void);
+nubia/nubia_disp_preference.h:void nubia_set_dsi_ctrl(struct dsi_display *display, const char *dsi_type);

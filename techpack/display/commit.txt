@@ -1,0 +1,565 @@
+Binary file nubia.tar matches
+include/linux/sde_vm_event.h: * @vm_post_hw_acquire: invoked before pushing the first commit
+msm/dp/dp_display.c:			 * the stream clks should be enabled so that no commit failure can
+msm/dsi/dsi_catalog.c:	phy->ops.commit_phy_timing = dsi_phy_hw_v4_0_commit_phy_timing;
+msm/dsi/dsi_catalog.h:void dsi_phy_hw_v4_0_commit_phy_timing(struct dsi_phy_hw *phy,
+msm/dsi/dsi_clk_manager.c:	 * drm commit.
+msm/dsi/dsi_ctrl_hw_cmn.c:	wmb(); /* ensure register committed */
+msm/dsi/dsi_ctrl_hw_cmn.c:	wmb(); /* ensure register committed */
+msm/dsi/dsi_ctrl_hw_cmn.c:	wmb(); /* ensure register committed */
+msm/dsi/dsi_ctrl_hw_cmn.c:	wmb(); /* ensure register is committed */
+msm/dsi/dsi_ctrl_hw_cmn.c:	wmb(); /* ensure register is committed */
+msm/dsi/dsi_ctrl_hw_cmn.c:	wmb(); /* make sure register is committed */
+msm/dsi/dsi_display.c:						commit_phy_timing);
+msm/dsi/dsi_display.c:					DSI_ERR("dfps and dyn clk not supported in same commit\n");
+msm/dsi/dsi_display.c:				commit_phy_timing);
+msm/dsi/dsi_display.c:		 * Don't check the return value so as not to impact DRM commit
+msm/dsi/dsi_display.c:		 * deferred to the next DRM commit.
+msm/dsi/dsi_display.c:		 * not to impact DRM commit. The clock updating would be
+msm/dsi/dsi_display.c:		commit_phy_timing = true;
+msm/dsi/dsi_display.c:	bool commit_phy_timing = false;
+msm/dsi/dsi_display.c:int dsi_display_pre_commit(void *display,
+msm/dsi/dsi_display.h: * @params: Parameters for pre commit time programming
+msm/dsi/dsi_display.h: * dsi_display_pre_commit - program pre commit features
+msm/dsi/dsi_display.h:int dsi_display_pre_commit(void *display,
+msm/dsi/dsi_drm.c:	return dsi_display_pre_commit(display, params);
+msm/dsi/dsi_drm.c:int dsi_conn_prepare_commit(void *display,
+msm/dsi/dsi_drm.h: * @params: Parameters for pre commit programming
+msm/dsi/dsi_drm.h: * dsi_conn_prepare_commit - program pre commit time features
+msm/dsi/dsi_drm.h:int dsi_conn_prepare_commit(void *display,
+msm/dsi/dsi_phy.c:			      u32 *timing, u32 size, bool commit)
+msm/dsi/dsi_phy.c:		phy->hw.ops.commit_phy_timing(&phy->hw, &phy->cfg.timing);
+msm/dsi/dsi_phy.c:	if (phy->hw.ops.commit_phy_timing && commit)
+msm/dsi/dsi_phy.c: * @commit:		  boolean to indicate if programming PHY HW registers is
+msm/dsi/dsi_phy.h:			      u32 *timing, u32 size, bool commit);
+msm/dsi/dsi_phy.h: * @commit:		  boolean to indicate if programming PHY HW registers is
+msm/dsi/dsi_phy_hw.h:	 * commit_phy_timing() - Commit PHY timing
+msm/dsi/dsi_phy_hw.h:	void (*commit_phy_timing)(struct dsi_phy_hw *phy,
+msm/dsi/dsi_phy_hw_v3_0.c:		wmb(); /* ensure register is committed */
+msm/dsi/dsi_phy_hw_v3_0.c:	wmb(); /* ensure register is committed */
+msm/dsi/dsi_phy_hw_v4_0.c:		wmb(); /* ensure register is committed */
+msm/dsi/dsi_phy_hw_v4_0.c:	/* Commit DSI PHY timings */
+msm/dsi/dsi_phy_hw_v4_0.c:	dsi_phy_hw_v4_0_commit_phy_timing(phy, timing);
+msm/dsi/dsi_phy_hw_v4_0.c:	wmb(); /* ensure register is committed */
+msm/dsi/dsi_phy_hw_v4_0.c:void dsi_phy_hw_v4_0_commit_phy_timing(struct dsi_phy_hw *phy,
+msm/dsi/dsi_pll_10nm.c:	dsi_pll_commit(pll, rsc);
+msm/dsi/dsi_pll_10nm.c:	dsi_pll_ssc_commit(pll, rsc);
+msm/dsi/dsi_pll_10nm.c:	wmb(); /* commit register writes */
+msm/dsi/dsi_pll_10nm.c:static void dsi_pll_commit(struct dsi_pll_10nm *pll,
+msm/dsi/dsi_pll_10nm.c:static void dsi_pll_ssc_commit(struct dsi_pll_10nm *pll,
+msm/dsi/dsi_pll_5nm.c:	dsi_pll_commit(pll, rsc);
+msm/dsi/dsi_pll_5nm.c:	dsi_pll_ssc_commit(pll, rsc);
+msm/dsi/dsi_pll_5nm.c:	wmb(); /* commit register writes */
+msm/dsi/dsi_pll_5nm.c:static void dsi_pll_commit(struct dsi_pll_5nm *pll,
+msm/dsi/dsi_pll_5nm.c:static void dsi_pll_ssc_commit(struct dsi_pll_5nm *pll,
+msm/msm_atomic.c:							&commit->commit_work);
+msm/msm_atomic.c:						 commit_work);
+msm/msm_atomic.c:				DRM_PLANE_COMMIT_ACTIVE_ONLY);
+msm/msm_atomic.c:				funcs->commit(crtc);
+msm/msm_atomic.c:			DRM_ERROR("failed to dispatch commit to any CRTC\n");
+msm/msm_atomic.c:			SDE_ATRACE_BEGIN("hbm_enable_commit");
+msm/msm_atomic.c:			SDE_ATRACE_END("hbm_enable_commit");
+msm/msm_atomic.c:			funcs->commit(encoder);
+msm/msm_atomic.c:		 * fallback now to a synchronous complete_commit to try and
+msm/msm_atomic.c:		 * one crtc per commit cycle. Remove this check then.
+msm/msm_atomic.c:		 * per commit cycle.
+msm/msm_atomic.c:		DRM_DEBUG_ATOMIC("triggering commit\n");
+msm/msm_atomic.c:		DRM_DEBUG_ATOMIC("triggering commit\n");
+msm/msm_atomic.c:		SDE_ATRACE_END("atomic_commit");
+msm/msm_atomic.c:		complete_commit(commit);
+msm/msm_atomic.c:		complete_commit_cleanup(commit);
+msm/msm_atomic.c:		goto init_commit_work;
+msm/msm_atomic.c:		kms->funcs->commit(kms, old_state);
+msm/msm_atomic.c:		kms->funcs->commit(kms, state);
+msm/msm_atomic.c:		kms->funcs->wait_for_crtc_commit_done(kms, crtc);
+msm/msm_atomic.c:		kthread_flush_work(&commit->commit_work);
+msm/msm_atomic.c:		msm_atomic_wait_for_commit_done(dev, state);
+msm/msm_atomic.c:		struct drm_atomic_state *state, struct msm_commit *commit,
+msm/msm_atomic.c:	 * before the new state gets committed on the software side with
+msm/msm_atomic.c:	 * done after the point of no return, but before asynchronous commits
+msm/msm_atomic.c:	 * finished before the .atomic_commit returns.
+msm/msm_atomic.c:	SDE_ATRACE_BEGIN("atomic_commit");
+msm/msm_atomic.c:	SDE_ATRACE_BEGIN("complete_commit");
+msm/msm_atomic.c:	SDE_ATRACE_END("atomic_commit");
+msm/msm_atomic.c:	SDE_ATRACE_END("atomic_commit");
+msm/msm_atomic.c:	SDE_ATRACE_END("complete_commit");
+msm/msm_atomic.c:	c = &to_kms_state(state)->commit;
+msm/msm_atomic.c:	complete_commit(commit);
+msm/msm_atomic.c:	complete_commit_cleanup(commit);
+msm/msm_atomic.c:	drm_atomic_helper_commit_hw_done(state);
+msm/msm_atomic.c:	drm_atomic_helper_commit_modeset_disables(dev, state);
+msm/msm_atomic.c:	drm_atomic_helper_commit_modeset_enables(dev, state);
+msm/msm_atomic.c:	drm_atomic_helper_commit_planes(dev, state,
+msm/msm_atomic.c:	drm_atomic_helper_commit_planes(dev, state, 0);
+msm/msm_atomic.c:	if (kms && kms->funcs && kms->funcs->commit) {
+msm/msm_atomic.c:	if (kms->funcs->commit) {
+msm/msm_atomic.c:	kms->funcs->complete_commit(kms, state);
+msm/msm_atomic.c:	kms->funcs->complete_commit(kms, state);
+msm/msm_atomic.c:	kms->funcs->prepare_commit(kms, state);
+msm/msm_atomic.c:	kms->funcs->prepare_commit(kms, state);
+msm/msm_atomic.c:	kthread_init_work(&state->commit.commit_work, _msm_drm_commit_work_cb);
+msm/msm_atomic.c:	msm_atomic_commit_dispatch(dev, state, c, nonblock);
+msm/msm_atomic.c:	msm_atomic_helper_commit_modeset_disables(dev, state);
+msm/msm_atomic.c:	msm_atomic_helper_commit_modeset_enables(dev, state);
+msm/msm_atomic.c:	msm_atomic_wait_for_commit_done(dev, state);
+msm/msm_atomic.c:	priv->commit_end_time =  ktime_get();
+msm/msm_atomic.c:	struct msm_commit *c;
+msm/msm_atomic.c:	struct msm_commit *commit = container_of(work, typeof(*commit),
+msm/msm_atomic.c:	struct msm_kms_state *kstate = container_of(c, typeof(*kstate), commit);
+msm/msm_atomic.c:	struct msm_kms_state *state = container_of(c, typeof(*state), commit);
+msm/msm_atomic.c:                        SDE_ATRACE_BEGIN("hbm_disable_commit");
+msm/msm_atomic.c:                        SDE_ATRACE_END("hbm_disable_commit");
+msm/msm_atomic.c: * @nonblock: nonblocking commit
+msm/msm_atomic.c: * This function commits a with drm_atomic_helper_check() pre-validated state
+msm/msm_atomic.c: * and do the plane commits at the end. This is useful for drivers doing runtime
+msm/msm_atomic.c: * and do the plane commits at the end. This is useful for drivers doing runtime
+msm/msm_atomic.c: * does. But drivers with different needs can group the modeset commits together
+msm/msm_atomic.c: * does. But drivers with different needs can group the modeset commits together
+msm/msm_atomic.c: * drm_atomic_helper_commit - commit validated state object
+msm/msm_atomic.c: * drm_atomic_helper_commit_planes(), which is what the default commit function
+msm/msm_atomic.c: * drm_atomic_helper_commit_planes(), which is what the default commit function
+msm/msm_atomic.c: * msm_atomic_helper_commit_modeset_disables - modeset commit to disable outputs
+msm/msm_atomic.c: * msm_atomic_helper_commit_modeset_enables - modeset commit to enable outputs
+msm/msm_atomic.c:/* The (potentially) asynchronous part of the commit.  At this point
+msm/msm_atomic.c:init_commit_work:
+msm/msm_atomic.c:int msm_atomic_commit(struct drm_device *dev,
+msm/msm_atomic.c:static void _msm_drm_commit_work_cb(struct kthread_work *work)
+msm/msm_atomic.c:static void complete_commit(struct msm_commit *c)
+msm/msm_atomic.c:static void complete_commit_cleanup(struct msm_commit *c)
+msm/msm_atomic.c:static void msm_atomic_commit_dispatch(struct drm_device *dev,
+msm/msm_atomic.c:static void msm_atomic_helper_commit_modeset_enables(struct drm_device *dev,
+msm/msm_atomic.c:static void msm_atomic_wait_for_commit_done(
+msm/msm_atomic.c:void msm_atomic_commit_tail(struct drm_atomic_state *state)
+msm/msm_atomic.c:void msm_atomic_helper_commit_modeset_disables(struct drm_device *dev,
+msm/msm_drv.c:				"crtc_commit:%d", priv->disp_thread[i].crtc_id);
+msm/msm_drv.c:			DRM_ERROR("client modeset commit failed: %d\n", rc);
+msm/msm_drv.c:			dev_err(dev, "failed to create crtc_commit kthread\n");
+msm/msm_drv.c:		 * failure at crtc commit level.
+msm/msm_drv.c:		 * frame_pending counters beyond 2. This can lead to commit
+msm/msm_drv.c:		DRM_INFO("wait for crtc mask 0x%x failed, commit anyway...\n",
+msm/msm_drv.c:		DRM_INFO("wait for crtc mask 0x%x failed, commit anyway...\n",
+msm/msm_drv.c:		rc = drm_client_modeset_commit_force(&kms->client);
+msm/msm_drv.c:	 * commit then ignore the last close call
+msm/msm_drv.c:	.atomic_commit = msm_atomic_commit,
+msm/msm_drv.c:	.atomic_commit_tail = msm_atomic_commit_tail,
+msm/msm_drv.c:	/* clean up display commit/event worker threads */
+msm/msm_drv.c:	/* wait again, before kms driver does it's lastclose commit */
+msm/msm_drv.c:	/* wait for any pending crtcs to finish before lastclose commit */
+msm/msm_drv.h:	MSM_ENC_COMMIT_DONE = 0,
+msm/msm_drv.h:	ktime_t  commit_end_time;
+msm/msm_drv.h: * @MSM_ENC_COMMIT_DONE - wait for the driver to flush the registers to HW
+msm/msm_drv.h:/* Commit/Event thread specific structure */
+msm/msm_drv.h:int msm_atomic_commit(struct drm_device *dev,
+msm/msm_drv.h:void msm_atomic_commit_tail(struct drm_atomic_state *state);
+msm/msm_gem_prime.c:	 * otherwise do delayed mapping during the commit.
+msm/msm_kms.h:	/* functions to wait for atomic commit completed on each CRTC */
+msm/msm_kms.h:	/* modeset, bracketing atomic_commit(): */
+msm/msm_kms.h:	void (*commit)(struct msm_kms *kms, struct drm_atomic_state *state);
+msm/msm_kms.h:	void (*complete_commit)(struct msm_kms *kms,
+msm/msm_kms.h:	void (*prepare_commit)(struct msm_kms *kms,
+msm/msm_kms.h:	void (*wait_for_crtc_commit_done)(struct msm_kms *kms,
+msm/sde/sde_color_processing.c:	 * and actual commit. Allocate properties only if feature list is
+msm/sde/sde_color_processing.h: *                               Should be called during atomic commit call.
+msm/sde/sde_connector.c:			 * atomic_commit. But this function is allowed to be
+msm/sde/sde_connector.c:			 * commit completion
+msm/sde/sde_connector.c:	 * 2) Commit thread (if TE stops coming)
+msm/sde/sde_connector.c:	 * first frame commit is received from the HW.
+msm/sde/sde_connector.c:	if (!c_conn->ops.prepare_commit)
+msm/sde/sde_connector.c:	rc = c_conn->ops.prepare_commit(c_conn->display, &params);
+msm/sde/sde_connector.c:int sde_connector_prepare_commit(struct drm_connector *connector)
+msm/sde/sde_connector.c:int sde_connector_set_property_for_commit(struct drm_connector *connector,
+msm/sde/sde_connector.c:void sde_connector_commit_reset(struct drm_connector *connector, ktime_t ts)
+msm/sde/sde_connector.c:void sde_connector_complete_commit(struct drm_connector *connector,
+msm/sde/sde_connector.c:void sde_connector_complete_qsync_commit(struct drm_connector *conn,
+msm/sde/sde_connector.h:	 *	pre commit time programming into the display
+msm/sde/sde_connector.h:	 * prepare_commit - trigger display to program pre-commit time features
+msm/sde/sde_connector.h:	int (*prepare_commit)(void *display,
+msm/sde/sde_connector.h: *			of qsync, if modified for the current commit
+msm/sde/sde_connector.h: *	to the atomic state in preparation for a drm_atomic_commit.
+msm/sde/sde_connector.h: * @atomic_state: Pointer to DRM atomic state structure for commit
+msm/sde/sde_connector.h: * sde_connector_commit_reset - reset the completion signal
+msm/sde/sde_connector.h: * sde_connector_complete_commit - signal completion of current commit
+msm/sde/sde_connector.h: * sde_connector_complete_qsync_commit - callback signalling completion
+msm/sde/sde_connector.h: * sde_connector_prepare_commit - trigger commit time feature programming
+msm/sde/sde_connector.h: * sde_connector_prepare_fence - prepare fence support for current commit
+msm/sde/sde_connector.h: * sde_connector_set_property_for_commit - add property set to atomic state
+msm/sde/sde_connector.h:int sde_connector_prepare_commit(struct drm_connector *connector);
+msm/sde/sde_connector.h:int sde_connector_set_property_for_commit(struct drm_connector *connector,
+msm/sde/sde_connector.h:void sde_connector_commit_reset(struct drm_connector *connector, ktime_t ts);
+msm/sde/sde_connector.h:void sde_connector_complete_commit(struct drm_connector *connector,
+msm/sde/sde_connector.h:void sde_connector_complete_qsync_commit(struct drm_connector *conn,
+msm/sde/sde_core_perf.c:		 *    than current vote at end of commit or stop.
+msm/sde/sde_core_perf.c: * Function checks a state variable for the crtc, if all pending commit
+msm/sde/sde_crtc.c:				old_valid_fb, post_commit, &ops);
+msm/sde/sde_crtc.c:				post_commit, ops, SDE_EVTLOG_FUNC_EXIT);
+msm/sde/sde_crtc.c:			DRMID(crtc), secure_level, old_valid_fb, post_commit);
+msm/sde/sde_crtc.c:			POST_COMMIT : PRE_COMMIT;
+msm/sde/sde_crtc.c:			POST_COMMIT : PRE_COMMIT;
+msm/sde/sde_crtc.c:			old_valid_fb, post_commit, SDE_EVTLOG_FUNC_ENTRY);
+msm/sde/sde_crtc.c:			post_commit |= sde_encoder_check_curr_mode(encoder,
+msm/sde/sde_crtc.c:			sde_connector_commit_reset(cstate->connectors[i],
+msm/sde/sde_crtc.c:		 * - fail empty commit
+msm/sde/sde_crtc.c:		 * - fail if previous commit has no planes staged and
+msm/sde/sde_crtc.c:		SDE_DEBUG("crtc%d commit\n", crtc->base.id);
+msm/sde/sde_crtc.c:		SDE_DEBUG("crtc%d first commit\n", crtc->base.id);
+msm/sde/sde_crtc.c:		SDE_DEBUG("no change in settings, skip commit\n");
+msm/sde/sde_crtc.c:		smmu_state->transition_type = PRE_COMMIT;
+msm/sde/sde_crtc.c:		smmu_state->transition_type = PRE_COMMIT;
+msm/sde/sde_crtc.c:		smmu_state->transition_type = post_commit ?
+msm/sde/sde_crtc.c:		smmu_state->transition_type = post_commit ?
+msm/sde/sde_crtc.c:	 * For planes without commit update, drm framework will not add
+msm/sde/sde_crtc.c:	 * Hwcomposer now queries the fences using the commit list in atomic
+msm/sde/sde_crtc.c:	 * In video mode check for null commit before transition
+msm/sde/sde_crtc.c:	 * Reject commit if a Plane CRTC destination coordinates fall outside
+msm/sde/sde_crtc.c:	 * commit ioctl. The offset should be set to next timeline
+msm/sde/sde_crtc.c:	 * last commit cycle, driver has to restore the hardware state
+msm/sde/sde_crtc.c:	 * reset the fence timeline if crtc will not be enabled for this commit
+msm/sde/sde_crtc.c:	 * which will be incremented during the prepare commit phase
+msm/sde/sde_crtc.c:	/* provide safe "border color only" commit configuration for later */
+msm/sde/sde_crtc.c:	/* restore encoder; crtc will be programmed during commit */
+msm/sde/sde_crtc.c:	SDE_ATRACE_BEGIN("crtc_commit");
+msm/sde/sde_crtc.c:	SDE_ATRACE_BEGIN("sde_crtc_prepare_commit");
+msm/sde/sde_crtc.c:	SDE_ATRACE_END("crtc_commit");
+msm/sde/sde_crtc.c:	SDE_ATRACE_END("sde_crtc_prepare_commit");
+msm/sde/sde_crtc.c:	SDE_DEBUG("crtc%d: secure_level %d old_valid_fb %d post_commit %d\n",
+msm/sde/sde_crtc.c:	bool post_commit = false;
+msm/sde/sde_crtc.c:	sde_connector_complete_commit(connector, ts, fence_event);
+msm/sde/sde_crtc.c:	struct sde_mdss_cfg *catalog, bool old_valid_fb, bool post_commit,
+msm/sde/sde_crtc.c: * @old_state: Pointer to crtc state for previous commit
+msm/sde/sde_crtc.c: * Returns: Zero if current commit should still be attempted
+msm/sde/sde_crtc.c:void sde_crtc_commit_kickoff(struct drm_crtc *crtc,
+msm/sde/sde_crtc.c:void sde_crtc_complete_commit(struct drm_crtc *crtc,
+msm/sde/sde_crtc.c:void sde_crtc_prepare_commit(struct drm_crtc *crtc,
+msm/sde/sde_crtc.h: *                               commit kickoff
+msm/sde/sde_crtc.h: *                  commit-thread, not state-swap time which is earlier, so
+msm/sde/sde_crtc.h: * @cur_perf      : current performance committed to clock/bandwidth driver
+msm/sde/sde_crtc.h: * @next_time_index	: index into time_buf for storing ktime for next commit
+msm/sde/sde_crtc.h: * @old_state: Pointer to crtc state for previous commit
+msm/sde/sde_crtc.h: * @plane_mask_old: keeps track of the planes used in the previous commit
+msm/sde/sde_crtc.h: * @post_commit: if this operation is triggered after commit
+msm/sde/sde_crtc.h: * @time_buf		: Buffer for storing ktime of the commits
+msm/sde/sde_crtc.h: * Returns: Zero if current commit should still be attempted
+msm/sde/sde_crtc.h: * sde_crtc_commit_kickoff - trigger kickoff of the commit for this crtc
+msm/sde/sde_crtc.h: * sde_crtc_complete_commit - callback signalling completion of current commit
+msm/sde/sde_crtc.h: * sde_crtc_prepare_commit - callback to prepare for output fences
+msm/sde/sde_crtc.h:int sde_crtc_secure_ctrl(struct drm_crtc *crtc, bool post_commit);
+msm/sde/sde_crtc.h:void sde_crtc_commit_kickoff(struct drm_crtc *crtc,
+msm/sde/sde_crtc.h:void sde_crtc_complete_commit(struct drm_crtc *crtc,
+msm/sde/sde_crtc.h:void sde_crtc_prepare_commit(struct drm_crtc *crtc,
+msm/sde/sde_encoder.c:				      "prepare commit failed conn %d rc %d\n",
+msm/sde/sde_encoder.c:			fn_wait = phys->ops.wait_for_commit_done;
+msm/sde/sde_encoder.c:			phys->ops.prepare_commit(phys);
+msm/sde/sde_encoder.c:		 * In some cases, commit comes with slight delay
+msm/sde/sde_encoder.c:		SDE_ERROR_ENC(sde_enc, "wait for commit done returned %d\n", ret);
+msm/sde/sde_encoder.c:		case MSM_ENC_COMMIT_DONE:
+msm/sde/sde_encoder.c:		if (phys && phys->ops.prepare_commit)
+msm/sde/sde_encoder.c:		rc = sde_connector_prepare_commit(
+msm/sde/sde_encoder.c:	 * locally since we hold the commit thread
+msm/sde/sde_encoder.c:	/* create a 'no pipes' commit to release buffers on errors */
+msm/sde/sde_encoder.c: *        off work since a new commit is imminent.
+msm/sde/sde_encoder.c:int sde_encoder_prepare_commit(struct drm_encoder *drm_enc)
+msm/sde/sde_encoder.h: *				only in commit phase
+msm/sde/sde_encoder.h: *		with a 'safe' commit
+msm/sde/sde_encoder.h: *	Immediately: if no previous commit is outstanding.
+msm/sde/sde_encoder.h: *	atomic commit, before any registers are written
+msm/sde/sde_encoder.h: * @affected_displays:  bitmask, bit set means the ROI of the commit lies within
+msm/sde/sde_encoder.h: * @is_error:	whether the current commit needs to be aborted and replaced
+msm/sde/sde_encoder.h: * MSM_ENC_COMMIT_DONE -  Wait for hardware to have flushed the current pending
+msm/sde/sde_encoder.h: * This api must not be called from crtc_commit (display) thread because it
+msm/sde/sde_encoder.h: * sde_encoder_prepare_commit - prepare encoder at the very beginning of an
+msm/sde/sde_encoder.h:int sde_encoder_prepare_commit(struct drm_encoder *drm_enc);
+msm/sde/sde_encoder_dce.c:	 * Since pending flushes from previous commit get cleared
+msm/sde/sde_encoder_dce.c:	 * Since pending flushes from previous commit get cleared
+msm/sde/sde_encoder_phys.h:	int (*wait_for_commit_done)(struct sde_encoder_phys *phys_enc);
+msm/sde/sde_encoder_phys.h:	void (*prepare_commit)(struct sde_encoder_phys *encoder);
+msm/sde/sde_encoder_phys.h: * @prepare_commit:		MSM Atomic Call, start of atomic commit sequence
+msm/sde/sde_encoder_phys.h: * @wait_for_commit_done:	Wait for hardware to have flushed the
+msm/sde/sde_encoder_phys_cmd.c:	 * proceed with current frame commit/push. Sequence fallowed is,
+msm/sde/sde_encoder_phys_cmd.c:	 * role changing on left-only, right-only back-to-back commits
+msm/sde/sde_encoder_phys_cmd.c:	 * to allow the next commit and avoid device freeze.
+msm/sde/sde_encoder_phys_cmd.c:	/* Signal any waiting atomic commit thread */
+msm/sde/sde_encoder_phys_cmd.c:	/* Signal any waiting atomic commit thread */
+msm/sde/sde_encoder_phys_cmd.c:	ops->prepare_commit = sde_encoder_phys_cmd_prepare_commit;
+msm/sde/sde_encoder_phys_cmd.c:	ops->wait_for_commit_done = sde_encoder_phys_cmd_wait_for_commit_done;
+msm/sde/sde_encoder_phys_cmd.c:static int sde_encoder_phys_cmd_wait_for_commit_done(
+msm/sde/sde_encoder_phys_cmd.c:static void sde_encoder_phys_cmd_prepare_commit(
+msm/sde/sde_encoder_phys_vid.c:	/* Signal any waiting atomic commit thread */
+msm/sde/sde_encoder_phys_vid.c:	ops->prepare_commit = sde_encoder_phys_vid_prepare_for_commit;
+msm/sde/sde_encoder_phys_vid.c:	ops->wait_for_commit_done = sde_encoder_phys_vid_wait_for_vblank;
+msm/sde/sde_encoder_phys_vid.c:static void sde_encoder_phys_vid_prepare_for_commit(
+msm/sde/sde_encoder_phys_wb.c:		SDE_DEBUG("invalid enc, skipping extra commit\n");
+msm/sde/sde_encoder_phys_wb.c:		SDE_ERROR("WB commit before CWB disable\n");
+msm/sde/sde_encoder_phys_wb.c:		_sde_encoder_phys_wb_wait_for_commit_done(phys_enc, true);
+msm/sde/sde_encoder_phys_wb.c:		rc = _sde_encoder_phys_wb_wait_for_commit_done(phys_enc, false);
+msm/sde/sde_encoder_phys_wb.c:		rc = _sde_encoder_phys_wb_wait_for_commit_done(phys_enc, true);
+msm/sde/sde_encoder_phys_wb.c:	 * Other resources allocated at atomic commit time by use case
+msm/sde/sde_encoder_phys_wb.c:	/* clear pending flush if commit with no framebuffer */
+msm/sde/sde_encoder_phys_wb.c:	/* don't notify upper layer for internal commit */
+msm/sde/sde_encoder_phys_wb.c:	/* signal completion if commit with no framebuffer */
+msm/sde/sde_encoder_phys_wb.c:	_sde_encoder_phys_wb_wait_for_commit_done(phys_enc, true);
+msm/sde/sde_encoder_phys_wb.c:	ops->wait_for_commit_done = sde_encoder_phys_wb_wait_for_commit_done;
+msm/sde/sde_encoder_phys_wb.c:	return _sde_encoder_phys_wb_wait_for_commit_done(phys_enc, true);
+msm/sde/sde_encoder_phys_wb.c: * _sde_encoder_phys_wb_init_internal_fb - create fb for internal commit
+msm/sde/sde_encoder_phys_wb.c: * sde_encoder_phys_wb_wait_for_commit_done - wait until request is committed
+msm/sde/sde_encoder_phys_wb.c:static int _sde_encoder_phys_wb_wait_for_commit_done(
+msm/sde/sde_encoder_phys_wb.c:static int sde_encoder_phys_wb_wait_for_commit_done(
+msm/sde/sde_fence.c:					ctx->done_count, ctx->commit_count);
+msm/sde/sde_fence.c:					ctx->done_count, ctx->commit_count);
+msm/sde/sde_fence.c:				ctx->commit_count, ktime_to_us(ts),
+msm/sde/sde_fence.c:				ctx->done_count, ctx->commit_count);
+msm/sde/sde_fence.c:			  "timeline reset attempt! done count:%d commit:%d\n",
+msm/sde/sde_fence.c:			ctx->done_count = ctx->commit_count;
+msm/sde/sde_fence.c:			fd, trigger_value, ctx->commit_count, offset);
+msm/sde/sde_fence.c:		++ctx->commit_count;
+msm/sde/sde_fence.c:		SDE_DEBUG("fence_signal:done count:%d commit count:%d\n",
+msm/sde/sde_fence.c:		SDE_ERROR("extra signal attempt! done count:%d commit:%d\n",
+msm/sde/sde_fence.c:		SDE_EVT32(ctx->drm_id, ctx->done_count, ctx->commit_count,
+msm/sde/sde_fence.c:		ctx->commit_count);
+msm/sde/sde_fence.c:		ctx->commit_count);
+msm/sde/sde_fence.c:		if ((int)(ctx->done_count - ctx->commit_count) < 0) {
+msm/sde/sde_fence.c:	 * after an additional delay of one commit, rather than at the
+msm/sde/sde_fence.c:	 * cause fences returned during a particular commit to signal
+msm/sde/sde_fence.c:	 * w.r.t. the commit completion (e.g., an offset of +1 would
+msm/sde/sde_fence.c:	SDE_DEBUG("fd:%d trigger:%d commit:%d offset:%d\n",
+msm/sde/sde_fence.c:	SDE_ERROR("drm obj:%s id:%d type:0x%x done_count:%d commit_count:%d\n",
+msm/sde/sde_fence.c:	SDE_EVT32(ctx->drm_id, ctx->done_count, ctx->commit_count,
+msm/sde/sde_fence.c:	seq_printf(*s, "drm obj:%s id:%d type:0x%x done_count:%d commit_count:%d\n",
+msm/sde/sde_fence.c:	trigger_value = ctx->commit_count + offset;
+msm/sde/sde_fence.c:	} else if ((int)(ctx->done_count - ctx->commit_count) < 0) {
+msm/sde/sde_fence.c: * @name: name of each fence- it is fence timeline + commit_count
+msm/sde/sde_fence.h:	unsigned int commit_count;
+msm/sde/sde_fence.h: * @commit_count: Number of detected commits since bootup
+msm/sde/sde_fence.h: * @done_count: Number of completed commits since bootup
+msm/sde/sde_fence.h: * @offset: Fence signal commit offset, e.g., +1 to signal on next commit
+msm/sde/sde_fence.h: * sde_fence_prepare - prepare to return fences for current commit
+msm/sde/sde_hw_ctl.h: * configuration is changed and needs to be committed on Hw. Flush mask caches
+msm/sde/sde_hw_ctl.h: * the different bits for the ongoing commit.
+msm/sde/sde_hw_intf.h:	 * Signal the trigger on each commit for AVR
+msm/sde/sde_kms.c:				"[conn: %d] wait for commit done returned %d\n",
+msm/sde/sde_kms.c:			   commit_crtc_cnt, global_crtc_cnt, DRMID(active_crtc),
+msm/sde/sde_kms.c:			"[crtc: %d][enc: %d] wait for commit done returned %d\n",
+msm/sde/sde_kms.c:			SDE_ERROR("vm post commit failed, rc = %d\n",
+msm/sde/sde_kms.c:			SDE_ERROR("wait for commit done returned %d\n", ret);
+msm/sde/sde_kms.c:			_sde_kms_null_commit(ddev, enc);
+msm/sde/sde_kms.c:			if (sde_encoder_prepare_commit(encoder) == -ETIMEDOUT) {
+msm/sde/sde_kms.c:			post_commit, smmu_state->sui_misr_state,
+msm/sde/sde_kms.c:			ret = drm_atomic_helper_commit_duplicated_state(
+msm/sde/sde_kms.c:			ret = sde_connector_set_property_for_commit(conn, state,
+msm/sde/sde_kms.c:			sde_crtc_commit_kickoff(crtc, old_crtc_state);
+msm/sde/sde_kms.c:			sde_crtc_prepare_commit(crtc, old_crtc_state);
+msm/sde/sde_kms.c:		(commit_crtc_cnt > catalog->max_trusted_vm_displays ||
+msm/sde/sde_kms.c:		.prepare_commit = dsi_conn_prepare_commit,
+msm/sde/sde_kms.c:		SDE_DEBUG("skip commit as no fb(s)\n");
+msm/sde/sde_kms.c:		SDE_ERROR("Error %d doing the atomic commit\n", ret);
+msm/sde/sde_kms.c:		SDE_ERROR("atomic commit failed in preclose, ret:%d\n", ret);
+msm/sde/sde_kms.c:		bool post_commit)
+msm/sde/sde_kms.c:		commit_crtc_cnt++;
+msm/sde/sde_kms.c:		if (sde_kms->smmu_state.transition_type == POST_COMMIT)
+msm/sde/sde_kms.c:		rc = vm_ops->vm_post_commit(sde_kms, old_state);
+msm/sde/sde_kms.c:		ret = sde_encoder_wait_for_event(encoder, MSM_ENC_COMMIT_DONE);
+msm/sde/sde_kms.c:		sde_connector_complete_qsync_commit(connector, &params);
+msm/sde/sde_kms.c:		sde_crtc_complete_commit(crtc, old_crtc_state);
+msm/sde/sde_kms.c:		vm_ops->vm_prepare_commit(sde_kms, state);
+msm/sde/sde_kms.c:	    ((smmu_state->transition_type == POST_COMMIT) && !post_commit))
+msm/sde/sde_kms.c:	 * - fail crtc commit, if secure-camera/secure-ui session is
+msm/sde/sde_kms.c:	 * - fail secure-camera/secure-ui crtc commit, if any other display
+msm/sde/sde_kms.c:	 * commit. It removes the extra vote from suspend and adds it back
+msm/sde/sde_kms.c:	 * in this commit should match with the global crtc
+msm/sde/sde_kms.c:	 * removed on the successful first commit.
+msm/sde/sde_kms.c:	.commit          = sde_kms_commit,
+msm/sde/sde_kms.c:	.complete_commit = sde_kms_complete_commit,
+msm/sde/sde_kms.c:	.prepare_commit  = sde_kms_prepare_commit,
+msm/sde/sde_kms.c:	.wait_for_crtc_commit_done = sde_kms_wait_for_commit_done,
+msm/sde/sde_kms.c:	/* Check for single crtc commits only on valid VM requests */
+msm/sde/sde_kms.c:	/* commit the "disable all" state */
+msm/sde/sde_kms.c:	/* if a display stuck in CS trigger a null commit to complete handoff */
+msm/sde/sde_kms.c:	/* if vm_req is enabled, once CRTC on the commit is guaranteed */
+msm/sde/sde_kms.c:	/* if vm_req is enabled, once CRTC on the commit is guaranteed */
+msm/sde/sde_kms.c:	SDE_ATRACE_BEGIN("prepare_commit");
+msm/sde/sde_kms.c:	SDE_ATRACE_BEGIN("sde_kms_commit");
+msm/sde/sde_kms.c:	SDE_ATRACE_BEGIN("sde_kms_complete_commit");
+msm/sde/sde_kms.c:	SDE_ATRACE_BEGIN("sde_kms_wait_for_commit_done");
+msm/sde/sde_kms.c:	SDE_ATRACE_END("prepare_commit");
+msm/sde/sde_kms.c:	SDE_ATRACE_END("sde_kms_commit");
+msm/sde/sde_kms.c:	SDE_ATRACE_END("sde_kms_complete_commit");
+msm/sde/sde_kms.c:	SDE_ATRACE_END("sde_ksm_wait_for_commit_done");
+msm/sde/sde_kms.c:	SDE_DEBUG("null commit after removing all the pipes\n");
+msm/sde/sde_kms.c:	if (vm_ops && vm_ops->vm_post_commit) {
+msm/sde/sde_kms.c:	if (vm_ops->vm_prepare_commit)
+msm/sde/sde_kms.c:	ret = drm_atomic_commit(state);
+msm/sde/sde_kms.c:	ret = drm_atomic_commit(state);
+msm/sde/sde_kms.c:	ret = drm_atomic_commit(state);
+msm/sde/sde_kms.c:	ret = drm_atomic_commit(state);
+msm/sde/sde_kms.c:	uint32_t i, commit_crtc_cnt = 0, global_crtc_cnt = 0;
+msm/sde/sde_kms.c:int sde_kms_vm_primary_post_commit(struct sde_kms *sde_kms,
+msm/sde/sde_kms.c:int sde_kms_vm_primary_prepare_commit(struct sde_kms *sde_kms,
+msm/sde/sde_kms.c:int sde_kms_vm_trusted_post_commit(struct sde_kms *sde_kms,
+msm/sde/sde_kms.c:int sde_kms_vm_trusted_prepare_commit(struct sde_kms *sde_kms,
+msm/sde/sde_kms.c:static void _sde_kms_null_commit(struct drm_device *dev,
+msm/sde/sde_kms.c:static void sde_kms_commit(struct msm_kms *kms,
+msm/sde/sde_kms.c:static void sde_kms_complete_commit(struct msm_kms *kms,
+msm/sde/sde_kms.c:static void sde_kms_prepare_commit(struct msm_kms *kms,
+msm/sde/sde_kms.c:static void sde_kms_wait_for_commit_done(struct msm_kms *kms,
+msm/sde/sde_kms.h:	POST_COMMIT
+msm/sde/sde_kms.h:	PRE_COMMIT,
+msm/sde/sde_kms.h: *				       the first commit after the accepting
+msm/sde/sde_kms.h: *				       the first commit after the reclaming
+msm/sde/sde_kms.h: *				    last commit before assign the HW
+msm/sde/sde_kms.h: *				    last commit before releasing the HW
+msm/sde/sde_kms.h: * @POST_COMMIT: state transitions to be done after processing the commit.
+msm/sde/sde_kms.h: * @PRE_COMMIT: state transitions should be done before processing the commit
+msm/sde/sde_kms.h: * @staged_len: Temporary data buffer length, commit to
+msm/sde/sde_kms.h: * @state: current frame's atomic commit state
+msm/sde/sde_kms.h: * @state: current frame's atomic commit state
+msm/sde/sde_kms.h: * @state: current frames atomic commit state
+msm/sde/sde_kms.h: * @state: current frames atomic commit state
+msm/sde/sde_kms.h: * @state: current update atomic commit state
+msm/sde/sde_kms.h: * Return: True if commits should be rejected due to pm suspend
+msm/sde/sde_kms.h: * sde_kms_is_suspend_blocked - whether or not commits are blocked due to pm
+msm/sde/sde_kms.h: * sde_kms_vm_primary_post_commit - function to prepare the VM after the
+msm/sde/sde_kms.h: * sde_kms_vm_primary_prepare_commit - function to prepare the VM before the
+msm/sde/sde_kms.h: * sde_kms_vm_trusted_post_commit - function to prepare the VM after the
+msm/sde/sde_kms.h: * sde_kms_vm_trusted_prepare_commit - function to prepare the VM before the
+msm/sde/sde_kms.h:int sde_kms_vm_primary_post_commit(struct sde_kms *sde_kms,
+msm/sde/sde_kms.h:int sde_kms_vm_primary_prepare_commit(struct sde_kms *sde_kms,
+msm/sde/sde_kms.h:int sde_kms_vm_trusted_post_commit(struct sde_kms *sde_kms,
+msm/sde/sde_kms.h:int sde_kms_vm_trusted_prepare_commit(struct sde_kms *sde_kms,
+msm/sde/sde_plane.c:	 * defer the prepare_fb and handled it late, during the commit
+msm/sde/sde_plane.c:	 * in the commit sequence, all the parameters for updating the
+msm/sde/sde_plane.c:	 * plane->prepare_fb happens before the commit. In such case,
+msm/sde/sde_plane.c:	 * there is no plane state update in current commit cycle.
+msm/sde/sde_plane.c:	/* validate framebuffer layout before commit */
+msm/sde/sde_plane.h: *	should always be made from the same commit cycle.
+msm/sde/sde_plane.h: * sde_plane_flush - final plane operations before commit flush
+msm/sde/sde_reg_dma.h: * @ctl: ctl for which reg dma buffer needs to be committed.
+msm/sde/sde_reg_dma.h: * struct sde_reg_dma_kickoff_cfg - commit reg dma buffer to hw engine
+msm/sde/sde_rm.c:			 * valid case to have NULL commit before the
+msm/sde/sde_rm.c:		goto commit_rsvp;
+msm/sde/sde_rm.c:	 * Poll for rsvp_nxt clear, allow the check_only commit if rsvp_nxt
+msm/sde/sde_rm.c:	 * check_only commit with modeset when its predecessor atomic
+msm/sde/sde_rm.c:	 * commit is delayed / not committed the reservation yet.
+msm/sde/sde_rm.c:	 * commit rsvps. This rsvp_nxt can be cleared by a back to back
+msm/sde/sde_rm.c:	_sde_rm_commit_rsvp(rm, rsvp_nxt, conn_state);
+msm/sde/sde_rm.c: * @pending:	True for pending rsvp-nxt, cleared when the rsvp is committed
+msm/sde/sde_rm.c:/* ~one vsync poll time for rsvp_nxt to cleared by modeset from commit thread */
+msm/sde/sde_rm.c:commit_rsvp:
+msm/sde/sde_rm.c:static void _sde_rm_commit_rsvp(
+msm/sde/sde_vm.h:			       commit after acquiring the HW
+msm/sde/sde_vm.h:			    last commit before release
+msm/sde/sde_vm.h:	 * @state: current update atomic commit state
+msm/sde/sde_vm.h:	 * vm_post_commit - hook to handle operations after
+msm/sde/sde_vm.h:	 * vm_prepare_commit - hook to handle operations before the first
+msm/sde/sde_vm.h:	int (*vm_post_commit)(struct sde_kms *sde_kms,
+msm/sde/sde_vm.h:	int (*vm_prepare_commit)(struct sde_kms *sde_kms,
+msm/sde/sde_vm_primary.c:	ops->vm_post_commit = sde_kms_vm_primary_post_commit;
+msm/sde/sde_vm_primary.c:	ops->vm_prepare_commit = sde_kms_vm_primary_prepare_commit;
+msm/sde/sde_vm_trusted.c:	ops->vm_post_commit = sde_kms_vm_trusted_post_commit;
+msm/sde/sde_vm_trusted.c:	ops->vm_prepare_commit = sde_kms_vm_trusted_prepare_commit;
+msm/sde_dbg.h: * single commit.
+rotator/sde_rotator_core.c:				"failed to set kthread priority for commitq %d\n",
+rotator/sde_rotator_core.c:				&mgr->commitq[i].rot_kw, name);
+rotator/sde_rotator_core.c:				kthread_flush_worker(&mgr->commitq[i].rot_kw);
+rotator/sde_rotator_core.c:				kthread_stop(mgr->commitq[i].rot_thread);
+rotator/sde_rotator_core.c:				sde_rotator_commit_handler);
+rotator/sde_rotator_core.c:			if (mgr->commitq[i].rot_thread) {
+rotator/sde_rotator_core.c:			kthread_cancel_work_sync(&entry->commit_work);
+rotator/sde_rotator_core.c:			mgr->commitq[i].rot_thread = NULL;
+rotator/sde_rotator_core.c:		"commit handler s:%d.%u src:(%d,%d,%d,%d) dst:(%d,%d,%d,%d) f:0x%x dnsc:%u/%u\n",
+rotator/sde_rotator_core.c:		commit_work = &entry->commit_work;
+rotator/sde_rotator_core.c:		commit_work = &req->entries[i].commit_work;
+rotator/sde_rotator_core.c:		devm_kfree(mgr->device, mgr->commitq);
+rotator/sde_rotator_core.c:		entry->commitq = queue;
+rotator/sde_rotator_core.c:		entry->item.ts[SDE_ROTATOR_TS_COMMIT] = ktime_get();
+rotator/sde_rotator_core.c:		hw = sde_rotator_get_hw_resource(entry->commitq, entry);
+rotator/sde_rotator_core.c:		if (IS_ERR(mgr->commitq[i].rot_thread)) {
+rotator/sde_rotator_core.c:		kthread_flush_work(commit_work);
+rotator/sde_rotator_core.c:		kthread_flush_work(commit_work);
+rotator/sde_rotator_core.c:		kthread_init_work(&entry->commit_work,
+rotator/sde_rotator_core.c:		kthread_init_worker(&mgr->commitq[i].rot_kw);
+rotator/sde_rotator_core.c:		kthread_queue_work(&queue->rot_kw, &entry->commit_work);
+rotator/sde_rotator_core.c:		mgr->commitq = NULL;
+rotator/sde_rotator_core.c:		mgr->commitq[i].rot_thread = kthread_run(kthread_worker_fn,
+rotator/sde_rotator_core.c:		mgr->commitq[i].timeline = NULL;
+rotator/sde_rotator_core.c:		queue = entry->commitq;
+rotator/sde_rotator_core.c:		queue = entry->commitq;
+rotator/sde_rotator_core.c:		queue = req->entries[i].commitq;
+rotator/sde_rotator_core.c:		ret = sched_setscheduler(mgr->commitq[i].rot_thread,
+rotator/sde_rotator_core.c:		snprintf(name, sizeof(name), "rot_commitq_%d_%d",
+rotator/sde_rotator_core.c:		struct sde_rot_hw_resource *hw_res = mgr->commitq[i].hw;
+rotator/sde_rotator_core.c:		struct sde_rot_hw_resource *hw_res = mgr->commitq[i].hw;
+rotator/sde_rotator_core.c:		u32 wb_idx = entry->commitq->hw->wb_id;
+rotator/sde_rotator_core.c:	entry = container_of(work, struct sde_rot_entry, commit_work);
+rotator/sde_rotator_core.c:	entry->commitq = &mgr->commitq[wb_idx];
+rotator/sde_rotator_core.c:	entry->commitq = NULL;
+rotator/sde_rotator_core.c:	hw = entry->commitq->hw;
+rotator/sde_rotator_core.c:	hw = sde_rotator_get_hw_resource(entry->commitq, entry);
+rotator/sde_rotator_core.c:	if (!mgr->commitq)
+rotator/sde_rotator_core.c:	if (mgr->commitq) {
+rotator/sde_rotator_core.c:	mgr->commitq = devm_kzalloc(mgr->device, size, GFP_KERNEL);
+rotator/sde_rotator_core.c:	queue = mgr->commitq;
+rotator/sde_rotator_core.c:	sde_rotator_put_hw_resource(entry->commitq, entry, entry->commitq->hw);
+rotator/sde_rotator_core.c:	sde_rotator_put_hw_resource(entry->commitq, entry, hw);
+rotator/sde_rotator_core.c:	struct kthread_work *commit_work;
+rotator/sde_rotator_core.c:	struct kthread_work *commit_work;
+rotator/sde_rotator_core.c:	struct sde_rot_queue *queue = entry->commitq;
+rotator/sde_rotator_core.c:	trace_rot_entry_commit(
+rotator/sde_rotator_core.c: * Once the job is committed, the job entry is added to the done queue.
+rotator/sde_rotator_core.c: * This handler is responsible for commit the job to h/w.
+rotator/sde_rotator_core.c: * sde_rotator_commit_handler - Commit workqueue handler.
+rotator/sde_rotator_core.c:static void sde_rotator_commit_handler(struct kthread_work *work)
+rotator/sde_rotator_core.h:	SDE_ROTATOR_TS_COMMIT,		/* prepare h/w command */
+rotator/sde_rotator_core.h:	struct kthread_work commit_work;
+rotator/sde_rotator_core.h:	struct sde_rot_queue *commitq;
+rotator/sde_rotator_core.h:	struct sde_rot_queue *commitq;
+rotator/sde_rotator_core.h: * @commit_work: work descriptor for commit handler
+rotator/sde_rotator_core.h: * @commitq: array of rotator commit queue corresponding to hardware queue
+rotator/sde_rotator_core.h: * @commitq: pointer to commit handler rotator queue
+rotator/sde_rotator_core.h: * sde_rotator_queue_request - queue/schedule the given request for h/w commit
+rotator/sde_rotator_debug.c:					ts[SDE_ROTATOR_TS_COMMIT])),
+rotator/sde_rotator_debug.c:			ktime_to_us(ktime_sub(ts[SDE_ROTATOR_TS_COMMIT],
+rotator/sde_rotator_dev.c:			cmd_type == SDE_ROTATOR_INLINE_CMD_COMMIT) {
+rotator/sde_rotator_dev.c:		if (cmd_type == SDE_ROTATOR_INLINE_CMD_COMMIT)
+rotator/sde_rotator_dev.c:		item.sequence_id = ++(ctx->commit_sequence_id);
+rotator/sde_rotator_dev.c:		request->committed = true;
+rotator/sde_rotator_dev.c:		sde_rotator_get_timeline_commit_ts(ctx->work_queue.timeline));
+rotator/sde_rotator_dev.c:	if (request->committed) {
+rotator/sde_rotator_dev.c:	request->committed = false;
+rotator/sde_rotator_dev.c:	request->committed = false;
+rotator/sde_rotator_dev.c:	request->committed = true;
+rotator/sde_rotator_dev.c:	} else if (cmd_type == SDE_ROTATOR_INLINE_CMD_COMMIT) {
+rotator/sde_rotator_dev.c: * @cmd_type: command type - validate/prepare/commit/cleanup
+rotator/sde_rotator_dev.c: * sde_rotator_inline_commit - commit given rotator command
+rotator/sde_rotator_dev.c:EXPORT_SYMBOL(sde_rotator_inline_commit);
+rotator/sde_rotator_dev.c:int sde_rotator_inline_commit(void *handle, struct sde_rotator_inline_cmd *cmd,
+rotator/sde_rotator_dev.h:	bool committed;
+rotator/sde_rotator_dev.h:	u32 commit_sequence_id;
+rotator/sde_rotator_dev.h: * @commit_sequence_id: last committed sequence id
+rotator/sde_rotator_dev.h: * @committed: true if request committed to hardware
+rotator/sde_rotator_inline.h:	SDE_ROTATOR_INLINE_CMD_COMMIT,
+rotator/sde_rotator_inline.h: * @SDE_ROTATOR_INLINE_CMD_ABORT: abort current commit and reset
+rotator/sde_rotator_inline.h: * @SDE_ROTATOR_INLINE_CMD_CLEANUP: cleanup after commit is done
+rotator/sde_rotator_inline.h: * @SDE_ROTATOR_INLINE_CMD_COMMIT: commit command to hardware
+rotator/sde_rotator_inline.h:int sde_rotator_inline_commit(void *handle, struct sde_rotator_inline_cmd *cmd,
+rotator/sde_rotator_inline.h:int sde_rotator_inline_commit(void *handle, struct sde_rotator_inline_cmd *cmd,
+rotator/sde_rotator_r1.c:	ret = sde_mdp_writeback_display_commit(mdp_hw->ctl, &wb_args);
+rotator/sde_rotator_r1_ctl.c:	struct sde_mdp_commit_cb *commit_cb)
+rotator/sde_rotator_r1_ctl.c:int sde_mdp_display_commit(struct sde_mdp_ctl *ctl, void *arg,
+rotator/sde_rotator_r1_internal.h:	SDE_COMMIT_STAGE_READY_FOR_KICKOFF,
+rotator/sde_rotator_r1_internal.h:	SDE_COMMIT_STAGE_SETUP_DONE,
+rotator/sde_rotator_r1_internal.h:	int (*commit_cb_fnc)(enum sde_commit_stage_type commit_state,
+rotator/sde_rotator_r1_internal.h:	struct sde_mdp_commit_cb *commit_cb);
+rotator/sde_rotator_r1_internal.h: * enum sde_commit_stage_type - Indicate different commit stages
+rotator/sde_rotator_r1_internal.h:enum sde_commit_stage_type {
+rotator/sde_rotator_r1_internal.h:int sde_mdp_display_commit(struct sde_mdp_ctl *ctl, void *arg,
+rotator/sde_rotator_r1_internal.h:int sde_mdp_writeback_display_commit(struct sde_mdp_ctl *ctl, void *arg);
+rotator/sde_rotator_r1_internal.h:struct sde_mdp_commit_cb {
+rotator/sde_rotator_r1_wb.c:	return sde_mdp_display_commit(ctl, arg, NULL);
+rotator/sde_rotator_r1_wb.c:int sde_mdp_writeback_display_commit(struct sde_mdp_ctl *ctl, void *arg)
+rotator/sde_rotator_sync.c: * @next_value: next commit sequence number
+rotator/sde_rotator_sync.c: * sde_rotator_get_timeline_commit_ts - Return commit tick of given timeline
+rotator/sde_rotator_sync.c: * sde_rotator_resync_timeline - Resync timeline to last committed value
+rotator/sde_rotator_sync.c:u32 sde_rotator_get_timeline_commit_ts(struct sde_rot_timeline *tl)
+rotator/sde_rotator_sync.h:u32 sde_rotator_get_timeline_commit_ts(struct sde_rot_timeline *tl)
+rotator/sde_rotator_sync.h:u32 sde_rotator_get_timeline_commit_ts(struct sde_rot_timeline *tl);
+rotator/sde_rotator_trace.h:DEFINE_EVENT(rot_entry_template, rot_entry_commit,
+tinydrm/qpic_display.c:	.atomic_commit = drm_atomic_helper_commit,

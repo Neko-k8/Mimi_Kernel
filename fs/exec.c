@@ -1154,7 +1154,7 @@ static int de_thread(struct task_struct *tsk)
 		 * All the past CPU time is accumulated in signal_struct
 		 * from sister threads now dead.  But in this non-leader
 		 * exec, nothing survives from the original leader thread,
-		 * whose birth maru the true age of this process now.
+		 * whose birth marks the true age of this process now.
 		 * When we take on its identity by switching to its PID, we
 		 * also take its birthdate (always earlier than our own).
 		 */
@@ -1916,14 +1916,6 @@ out_ret:
 	if (filename)
 		putname(filename);
 	return retval;
-}
-
-static int do_execveat_common(int fd, struct filename *filename,
-			      struct user_arg_ptr argv,
-			      struct user_arg_ptr envp,
-			      int flags)
-{
-	return __do_execve_file(fd, filename, argv, envp, flags, NULL);
 }
 
 int do_execve_file(struct file *file, void *__argv, void *__envp)

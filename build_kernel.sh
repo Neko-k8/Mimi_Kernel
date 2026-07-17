@@ -1,14 +1,10 @@
 #!/bin/bash
 
 echo
-echo "--- Clean Build Directory ---"
-rm -rf ./out_cfi
-
-echo
 echo "--- Setting up Clang-Primary Toolchain ---"
 
-TOOLCHAIN_DIR="/run/media/haruka/DATA/Kernel_Android/toolchain"
-CLANG_ROOT="$TOOLCHAIN_DIR/linux-x86-531a564ba5426707dee226eccb19f104a7af5a5f-clang-r563880c"
+TOOLCHAIN_DIR="/run/media/hakyura/261dea50-a8a4-4d2a-8b3e-540a49827e31/toolchain"
+CLANG_ROOT="$TOOLCHAIN_DIR/Clang-22"
 GCC_ROOT="$TOOLCHAIN_DIR/aarch64--glibc--stable-2025.08-1"
 
 export CLANG_PATH="$CLANG_ROOT/bin"
@@ -27,6 +23,7 @@ MAKE_FLAGS=(
     HOSTCXX=clang++
     CROSS_COMPILE=aarch64-linux-gnu-
     CROSS_COMPILE_ARM32=arm-linux-gnueabi-
+    KCFLAGS="-w -Wno-error=return-mismatch"
 )
 
 export PATH="$CLANG_PATH:$GCC_ROOT/bin:${PATH}"

@@ -16,7 +16,6 @@
 #include <linux/rcupdate.h>
 #include <linux/refcount.h>
 #include <linux/workqueue.h>
-#include <linux/mutex.h>
 #include "flask.h"
 #include "policycap.h"
 

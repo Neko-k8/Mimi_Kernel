@@ -7,10 +7,10 @@
  * Always evaluates to 1 so you may use it easily in comparisons.
  */
 #define typecheck(type,x) \
-({	type __dummy; \
-	typeof(x) __dummy2; \
-	(void)(&__dummy == &__dummy2); \
-	1; \
+({    type __dummy; \
+    typeof(x) __dummy2 = (typeof(x))0; \
+    (void)(&__dummy == &__dummy2); \
+    1; \
 })
 
 /*
@@ -18,17 +18,17 @@
  * to that type (needs to use typedef for the function type.)
  */
 #define typecheck_fn(type,function) \
-({	typeof(type) __tmp = function; \
-	(void)__tmp; \
+({    typeof(type) __tmp = function; \
+    (void)__tmp; \
 })
 
 /*
  * Check at compile time that something is a pointer type.
  */
 #define typecheck_pointer(x) \
-({	typeof(x) __dummy; \
-	(void)sizeof(*__dummy); \
-	1; \
+({    typeof(x) __dummy; \
+    (void)sizeof(*__dummy); \
+    1; \
 })
 
-#endif		/* TYPECHECK_H_INCLUDED */
+#endif        /* TYPECHECK_H_INCLUDED */

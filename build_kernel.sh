@@ -3,7 +3,7 @@
 echo
 echo "--- Setting up Clang-Primary Toolchain ---"
 
-TOOLCHAIN_DIR="/run/media/hakyura/261dea50-a8a4-4d2a-8b3e-540a49827e31/toolchain"
+TOOLCHAIN_DIR="/home/hakyura/toolchain"
 CLANG_ROOT="$TOOLCHAIN_DIR/Clang-22"
 GCC_ROOT="$TOOLCHAIN_DIR/aarch64--glibc--stable-2025.08-1"
 

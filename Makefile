@@ -369,11 +369,11 @@ include scripts/subarch.include
 # Default value for CROSS_COMPILE is not to prefix executables
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 override ARCH           := arm64
-override CROSS_COMPILE   := /home/hakyura/toolchain/aarch64--glibc--stable-2025.08-1/bin/aarch64-linux-
-override CROSS_COMPILE_ARM32 := /home/hakyura/toolchain/aarch64--glibc--stable-2025.08-1/bin/aarch64-linux-
+override CROSS_COMPILE   := /home/shiroyura/Kernel_Buld/toolchain/aarch64--glibc--stable-2026.08-1/bin/aarch64-linux-
+override CROSS_COMPILE_ARM32 := /home/shiroyura/Kernel_Buld/toolchain/aarch64--glibc--stable-2026.08-1/bin/aarch64-linux-
 override LLVM           := 1
 override CLANG_TRIPLE   := aarch64-linux-gnu-
-override LLVM_PATH      := /home/hakyura/toolchain/Clang-22/bin/
+override LLVM_PATH      := /home/shiroyura/Kernel_Buld/toolchain/neutron-clang-06092026/bin/
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
 SRCARCH 	:= $(ARCH)

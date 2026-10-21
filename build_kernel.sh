@@ -3,15 +3,20 @@
 echo
 echo "--- Setting up Clang-Primary Toolchain ---"
 
-TOOLCHAIN_DIR="/home/hakyura/toolchain"
-CLANG_ROOT="$TOOLCHAIN_DIR/Clang-22"
-GCC_ROOT="$TOOLCHAIN_DIR/aarch64--glibc--stable-2025.08-1"
+TOOLCHAIN_DIR="/home/shiroyura/Kernel_Buld/toolchain"
+CLANG_ROOT="$TOOLCHAIN_DIR/neutron-clang-06092026"
+GCC_ROOT="$TOOLCHAIN_DIR/aarch64--glibc--stable-2026.08-1"
 
 export CLANG_PATH="$CLANG_ROOT/bin"
-export PATH="$CLANG_PATH:${PATH}"
+export PATH="$CLANG_PATH:$GCC_ROOT/bin:${PATH}"
+
 export ARCH=arm64
 export SUBARCH=arm64
 export CLANG_TRIPLE=aarch64-linux-gnu-
+
+export KCFLAGS="-w -O3 -march=armv8.4-a+crypto+dotprod+crc -mcpu=cortex-a78 -mtune=cortex-a78 -fuse-ld=lld -mllvm -polly -fvectorize -fslp-vectorize -Wno-error=return-mismatch"
+export HOSTCFLAGS="-O3"
+export HOSTCXXFLAGS="-O3"
 
 MAKE_FLAGS=(
     LLVM=1 
@@ -23,10 +28,7 @@ MAKE_FLAGS=(
     HOSTCXX=clang++
     CROSS_COMPILE=aarch64-linux-gnu-
     CROSS_COMPILE_ARM32=arm-linux-gnueabi-
-    KCFLAGS="-w -Wno-error=return-mismatch"
 )
-
-export PATH="$CLANG_PATH:$GCC_ROOT/bin:${PATH}"
 
 echo "Clang version:"
 $CLANG_PATH/clang --version
